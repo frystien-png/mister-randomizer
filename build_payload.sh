@@ -181,7 +181,12 @@ fi
 
 # ------------------------------------------------------------------------ pack
 mkdir -p "$(dirname "$OUT")"
-tar -czf "$OUT" -C "$BUILD" mistergames randomizer scripts
+# ⚠️ --owner/--group/--numeric-owner. A tar archive stores the OWNER NAME of
+# every file, and it is not visible in the extracted files - so the guard, which
+# reads file contents, cannot see it either. Without these flags the builder's
+# username travels inside the published tarball, in plain text, on every entry.
+tar --owner=root --group=root --numeric-owner \
+    -czf "$OUT" -C "$BUILD" mistergames randomizer scripts
 rm -rf "$BUILD"
 
 echo

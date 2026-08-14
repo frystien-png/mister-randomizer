@@ -218,6 +218,21 @@ while IFS= read -r line; do
     complain "network detail or secret: $line"
 done < "$HITS"
 
+# --- 4c. the archive's own metadata ---------------------------------------
+# ⚠️ A tar archive stores an owner name per entry, and unpacking throws it away
+# - so every check above, which works on the extracted files, is blind to it.
+# The builder's username otherwise ships inside the tarball on every single
+# file. Only checked when we were handed an archive.
+if [ -n "$CLEANUP" ]; then
+    OWNERS="$(tar -tvzf "$TARGET" 2>/dev/null | awk '{print $2}' | sort -u)"
+    for o in $OWNERS; do
+        case "$o" in
+            root/root|0/0) continue ;;
+        esac
+        complain "the archive is owned by \"$o\" - rebuild with tar --owner=root --group=root --numeric-owner"
+    done
+fi
+
 # --- 5. user state must be empty ------------------------------------------
 for f in $MUST_BE_EMPTY; do
     p="$ROOT/mistergames/$f"
