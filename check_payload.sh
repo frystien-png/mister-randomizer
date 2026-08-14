@@ -37,7 +37,10 @@ ROM_EXT='smc|sfc|fig|swc|srm|nes|unf|fds|gb|gbc|gba|n64|z64|v64|u64|
 #                         original games and ships with every SMZ3 randomizer.
 #                         Without it no seeds can be built.
 #   mistergames/*.png   - the map images and sprite sheets the pages draw with.
-EXCEPTIONS='^randomizer/zsm\.ips$|^mistergames/[a-z0-9-]+\.png$'
+#   docs/*.png          - screenshots for the README. They only exist in the
+#                         repository, never in a payload, and are large by
+#                         nature. Anything else under docs/ is still judged.
+EXCEPTIONS='^randomizer/zsm\.ips$|^mistergames/[a-z0-9-]+\.png$|^docs/[a-z0-9-]+\.png$'
 
 # Secrets and working traces that must not travel either.
 FORBIDDEN_NAMES='ha_token|nas_credentials|\.pem$|id_rsa|id_ed25519|\.env$|

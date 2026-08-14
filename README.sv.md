@@ -20,6 +20,26 @@ fåtal spel samlas bakom en enda ruta så att startsidan går att överblicka.
 > tom lista. Det gäller också basrommen till seedgenereringen: de måste
 > vara dina egna dumpar. Se *Dina egna ROM* nedan.
 
+<p align="center">
+  <img src="docs/seed-page.png" alt="Seed-sidan med två runs bredvid varandra" width="900">
+</p>
+
+<p align="center">
+  <img src="docs/map-light-world.png" alt="Ljusvärlden med dungeonräknare" width="440">
+  <img src="docs/map-zebes.png" alt="Zebes-kartan med tömda platser" width="440">
+</p>
+
+<p align="center">
+  <em>Grönt går att nå nu, rött är låst, grått är klart. Etiketterna räknar
+  kistorna som är kvar i varje dungeon.</em>
+</p>
+
+<p align="center">
+  <img src="docs/game-browser.png" alt="Spelbläddraren med alla system på kortet" width="900">
+</p>
+
+---
+
 ## Vad du behöver
 
 **Två maskiner, inte fler:**
@@ -241,6 +261,7 @@ Det står på andras arbete:
 | [bps](https://pypi.org/project/bps/) (WTFPL) | vendorad BPS-patchning. COPYING följer med i paketet. |
 | [snid](https://github.com/NobodyNada/snid) av NobodyNada | daemonen som gör live-läsning av SNES-minnet möjlig. Hämtas på begäran, paketeras aldrig. |
 | alttpr.com och samus.link | seedgenerering och sprites. Bara patchdata utväxlas; ingen ROM laddas någonsin upp. |
+| Skärmbilderna | Kartorna bakom prickarna är spelens egen grafik (© Nintendo); Zebes-kartan är gjord av Falcon Zero. De illustrerar trackern — ingen speldata följer med projektet. |
 
 **Ingen speldata av något slag ingår** — se avsnittet *Vad som INTE ingår*.
 

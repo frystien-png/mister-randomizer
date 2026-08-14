@@ -21,6 +21,26 @@ stays readable.
 > empty list. The same goes for the base ROMs used for seed generation:
 > they must be your own dumps. See *Your own ROMs* below.
 
+
+<p align="center">
+  <img src="docs/seed-page.png" alt="The seed page with two runs side by side" width="900">
+</p>
+
+<p align="center">
+  <img src="docs/map-light-world.png" alt="The Light World map with dungeon counters" width="440">
+  <img src="docs/map-zebes.png" alt="The Zebes map with collected locations" width="440">
+</p>
+
+<p align="center">
+  <em>Green is reachable now, red is locked, grey is done. The badges count the
+  chests left in each dungeon. Shown in Swedish here - English, Spanish, French
+  and Polish ship with it too.</em>
+</p>
+
+<p align="center">
+  <img src="docs/game-browser.png" alt="The game browser listing every system on the card" width="900">
+</p>
+
 ---
 
 ## What you need
@@ -288,6 +308,7 @@ It stands on other people's work:
 | [bps](https://pypi.org/project/bps/) (WTFPL) | vendored BPS patching. COPYING ships inside the package. |
 | [snid](https://github.com/NobodyNada/snid) by NobodyNada | the daemon that makes live reading of SNES memory possible. Downloaded on request, never bundled. |
 | alttpr.com and samus.link | seed generation and the sprites. Nothing but patch data is exchanged; no ROM is ever uploaded. |
+| The screenshots | The maps behind the dots are the games' own artwork (© Nintendo); the Zebes map is by Falcon Zero. They illustrate the tracker - no game data ships with this project. |
 
 **No game data of any kind is included** — see the *What is not included*
 section above.
