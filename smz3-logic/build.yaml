@@ -1,0 +1,9 @@
+---
+# python:3.12-slim is multiarch, so the same tag serves all three.
+# Archipelago requires Python 3.11-3.13; ModuleUpdate.py refuses to start
+# outside that range, so the base image must not be changed to
+# "python:latest".
+build_from:
+  amd64: python:3.12-slim
+  aarch64: python:3.12-slim
+  armv7: python:3.12-slim

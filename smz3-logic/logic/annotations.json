@@ -1,0 +1,1082 @@
+{
+ "Dark World|Blacksmith": {
+  "world": "lw",
+  "x": 0.30584,
+  "y": 0.52424
+ },
+ "Dark World|Brewery": {
+  "world": "dw",
+  "x": 0.1091,
+  "y": 0.57967
+ },
+ "Dark World|Bumper Cave": {
+  "world": "dw",
+  "x": 0.34221,
+  "y": 0.15292
+ },
+ "Dark World|C-Shaped House": {
+  "world": "dw",
+  "x": 0.20794,
+  "y": 0.4799
+ },
+ "Dark World|Catfish": {
+  "world": "dw",
+  "x": 0.8936,
+  "y": 0.17067
+ },
+ "Dark World|Chest Game": {
+  "world": "dw",
+  "x": 0.05128,
+  "y": 0.45939
+ },
+ "Dark World|Digging Game": {
+  "world": "dw",
+  "x": 0.05688,
+  "y": 0.67903
+ },
+ "Dark World|Hammer Pegs": {
+  "world": "dw",
+  "x": 0.31703,
+  "y": 0.60392
+ },
+ "Dark World|Hookshot Cave - Bottom Left": {
+  "world": "dw",
+  "x": 0.82814,
+  "y": 0.08131
+ },
+ "Dark World|Hookshot Cave - Bottom Right": {
+  "world": "dw",
+  "x": 0.83853,
+  "y": 0.08131
+ },
+ "Dark World|Hookshot Cave - Top Left": {
+  "world": "dw",
+  "x": 0.83126,
+  "y": 0.06468
+ },
+ "Dark World|Hookshot Cave - Top Right": {
+  "world": "dw",
+  "x": 0.84165,
+  "y": 0.06468
+ },
+ "Dark World|Hype Cave - Bottom": {
+  "world": "dw",
+  "x": 0.59677,
+  "y": 0.7788
+ },
+ "Dark World|Hype Cave - Middle Left": {
+  "world": "dw",
+  "x": 0.59024,
+  "y": 0.77041
+ },
+ "Dark World|Hype Cave - Middle Right": {
+  "world": "dw",
+  "x": 0.60236,
+  "y": 0.77228
+ },
+ "Dark World|Hype Cave - NPC": {
+  "world": "dw",
+  "x": 0.59677,
+  "y": 0.78626
+ },
+ "Dark World|Hype Cave - Top": {
+  "world": "dw",
+  "x": 0.59677,
+  "y": 0.76668
+ },
+ "Dark World|Mire Shed - Left": {
+  "world": "dw",
+  "x": 0.0345,
+  "y": 0.79186
+ },
+ "Dark World|Mire Shed - Right": {
+  "world": "dw",
+  "x": 0.04289,
+  "y": 0.79279
+ },
+ "Dark World|Purple Chest": {
+  "world": "lw",
+  "x": 0.34369,
+  "y": 0.89417
+ },
+ "Dark World|Pyramid": {
+  "world": "dw",
+  "x": 0.5798,
+  "y": 0.44893
+ },
+ "Dark World|Pyramid Fairy - Left": {
+  "world": "dw",
+  "x": 0.46342,
+  "y": 0.48114
+ },
+ "Dark World|Pyramid Fairy - Right": {
+  "world": "dw",
+  "x": 0.47485,
+  "y": 0.4801
+ },
+ "Dark World|Spike Cave": {
+  "world": "dw",
+  "x": 0.57357,
+  "y": 0.13742
+ },
+ "Dark World|Stumpy": {
+  "world": "dw",
+  "x": 0.30864,
+  "y": 0.68183
+ },
+ "Dark World|Superbunny Cave - Bottom": {
+  "world": "dw",
+  "x": 0.86035,
+  "y": 0.12287
+ },
+ "Dark World|Superbunny Cave - Top": {
+  "world": "dw",
+  "x": 0.86243,
+  "y": 0.10936
+ },
+ "Death Mountain|Ether Tablet": {
+  "world": "lw",
+  "x": 0.42147,
+  "y": 0.01678
+ },
+ "Death Mountain|Floating Island": {
+  "world": "lw",
+  "x": 0.81123,
+  "y": 0.02051
+ },
+ "Death Mountain|Mimic Cave": {
+  "world": "lw",
+  "x": 0.79538,
+  "y": 0.09159
+ },
+ "Death Mountain|Old Man": {
+  "world": "lw",
+  "x": 0.44851,
+  "y": 0.22752
+ },
+ "Death Mountain|Paradox Cave Lower - Far Left": {
+  "world": "lw",
+  "x": 0.842,
+  "y": 0.21913
+ },
+ "Death Mountain|Paradox Cave Lower - Far Right": {
+  "world": "lw",
+  "x": 0.87557,
+  "y": 0.21726
+ },
+ "Death Mountain|Paradox Cave Lower - Left": {
+  "world": "lw",
+  "x": 0.8476,
+  "y": 0.21913
+ },
+ "Death Mountain|Paradox Cave Lower - Middle": {
+  "world": "lw",
+  "x": 0.85972,
+  "y": 0.22099
+ },
+ "Death Mountain|Paradox Cave Lower - Right": {
+  "world": "lw",
+  "x": 0.87091,
+  "y": 0.21913
+ },
+ "Death Mountain|Paradox Cave Upper - Left": {
+  "world": "lw",
+  "x": 0.85226,
+  "y": 0.20327
+ },
+ "Death Mountain|Paradox Cave Upper - Right": {
+  "world": "lw",
+  "x": 0.85972,
+  "y": 0.20234
+ },
+ "Death Mountain|Spectacle Rock": {
+  "world": "lw",
+  "x": 0.50539,
+  "y": 0.08206
+ },
+ "Death Mountain|Spectacle Rock Cave": {
+  "world": "lw",
+  "x": 0.49513,
+  "y": 0.138
+ },
+ "Death Mountain|Spiral Cave": {
+  "world": "lw",
+  "x": 0.84387,
+  "y": 0.08299
+ },
+ "Dungeons|Castle Tower": {
+  "world": "lw",
+  "x": 0.49979,
+  "y": 0.39878
+ },
+ "Dungeons|Dark Palace": {
+  "world": "dw",
+  "x": 0.95949,
+  "y": 0.39039
+ },
+ "Dungeons|Desert Palace": {
+  "world": "lw",
+  "x": 0.0746,
+  "y": 0.77953
+ },
+ "Dungeons|Eastern Palace": {
+  "world": "lw",
+  "x": 0.95856,
+  "y": 0.38386
+ },
+ "Dungeons|Ganons Tower": {
+  "world": "dw",
+  "x": 0.5604,
+  "y": 0.03357
+ },
+ "Dungeons|Hyrule Castle": {
+  "world": "lw",
+  "x": 0.50073,
+  "y": 0.43141
+ },
+ "Dungeons|Ice Palace": {
+  "world": "dw",
+  "x": 0.79631,
+  "y": 0.85723
+ },
+ "Dungeons|Misery Mire": {
+  "world": "dw",
+  "x": 0.0746,
+  "y": 0.79942
+ },
+ "Dungeons|Skull Woods": {
+  "world": "dw",
+  "x": 0.03823,
+  "y": 0.04569
+ },
+ "Dungeons|Swamp Palace": {
+  "world": "dw",
+  "x": 0.46809,
+  "y": 0.93058
+ },
+ "Dungeons|Thieves Town": {
+  "world": "dw",
+  "x": 0.12588,
+  "y": 0.47928
+ },
+ "Dungeons|Tower Of Hera": {
+  "world": "lw",
+  "x": 0.5604,
+  "y": 0.02984
+ },
+ "Dungeons|Turtle Rock": {
+  "world": "dw",
+  "x": 0.93991,
+  "y": 0.07553
+ },
+ "Hyrule Castle|Link's Uncle": {
+  "world": "lw",
+  "x": 0.59417,
+  "y": 0.41214
+ },
+ "Hyrule Castle|Sanctuary": {
+  "world": "lw",
+  "x": 0.46019,
+  "y": 0.26068
+ },
+ "Hyrule Castle|Secret Passage": {
+  "world": "lw",
+  "x": 0.60583,
+  "y": 0.41068
+ },
+ "Light World|Aginah's Cave": {
+  "world": "lw",
+  "x": 0.1995,
+  "y": 0.81676
+ },
+ "Light World|Blind's Hideout - Far Left": {
+  "world": "lw",
+  "x": 0.11638,
+  "y": 0.40529
+ },
+ "Light World|Blind's Hideout - Far Right": {
+  "world": "lw",
+  "x": 0.14235,
+  "y": 0.40529
+ },
+ "Light World|Blind's Hideout - Left": {
+  "world": "lw",
+  "x": 0.12261,
+  "y": 0.40633
+ },
+ "Light World|Blind's Hideout - Right": {
+  "world": "lw",
+  "x": 0.13612,
+  "y": 0.40425
+ },
+ "Light World|Blind's Hideout - Top": {
+  "world": "lw",
+  "x": 0.12988,
+  "y": 0.41152
+ },
+ "Light World|Bombos Tablet": {
+  "world": "lw",
+  "x": 0.2234,
+  "y": 0.92171
+ },
+ "Light World|Bottle Merchant": {
+  "world": "lw",
+  "x": 0.09456,
+  "y": 0.46452
+ },
+ "Light World|Cave 45": {
+  "world": "lw",
+  "x": 0.266,
+  "y": 0.81676
+ },
+ "Light World|Checkerboard Cave": {
+  "world": "lw",
+  "x": 0.18392,
+  "y": 0.77831
+ },
+ "Light World|Chicken House": {
+  "world": "lw",
+  "x": 0.11326,
+  "y": 0.53102
+ },
+ "Light World|Desert Ledge": {
+  "world": "lw",
+  "x": 0.02598,
+  "y": 0.91235
+ },
+ "Light World|Floodgate Chest": {
+  "world": "lw",
+  "x": 0.46758,
+  "y": 0.92586
+ },
+ "Light World|Flute Spot": {
+  "world": "lw",
+  "x": 0.28574,
+  "y": 0.65674
+ },
+ "Light World|Graveyard Ledge": {
+  "world": "lw",
+  "x": 0.57045,
+  "y": 0.26398
+ },
+ "Light World|Hobo": {
+  "world": "lw",
+  "x": 0.70493,
+  "y": 0.69405
+ },
+ "Light World|Ice Rod Cave": {
+  "world": "lw",
+  "x": 0.89464,
+  "y": 0.76273
+ },
+ "Light World|Kakariko Tavern": {
+  "world": "lw",
+  "x": 0.16106,
+  "y": 0.5705
+ },
+ "Light World|Kakariko Well - Bottom": {
+  "world": "lw",
+  "x": 0.02702,
+  "y": 0.42399
+ },
+ "Light World|Kakariko Well - Left": {
+  "world": "lw",
+  "x": 0.0187,
+  "y": 0.4136
+ },
+ "Light World|Kakariko Well - Middle": {
+  "world": "lw",
+  "x": 0.02702,
+  "y": 0.41464
+ },
+ "Light World|Kakariko Well - Right": {
+  "world": "lw",
+  "x": 0.03637,
+  "y": 0.41464
+ },
+ "Light World|Kakariko Well - Top": {
+  "world": "lw",
+  "x": 0.02598,
+  "y": 0.40633
+ },
+ "Light World|King Zora": {
+  "world": "lw",
+  "x": 0.95283,
+  "y": 0.13118
+ },
+ "Light World|King's Tomb": {
+  "world": "lw",
+  "x": 0.60162,
+  "y": 0.29203
+ },
+ "Light World|Lake Hylia Island": {
+  "world": "lw",
+  "x": 0.72631,
+  "y": 0.82923
+ },
+ "Light World|Library": {
+  "world": "lw",
+  "x": 0.15794,
+  "y": 0.64947
+ },
+ "Light World|Link's House": {
+  "world": "lw",
+  "x": 0.54759,
+  "y": 0.6796
+ },
+ "Light World|Lost Woods Hideout": {
+  "world": "lw",
+  "x": 0.18599,
+  "y": 0.12703
+ },
+ "Light World|Lumberjack Tree": {
+  "world": "lw",
+  "x": 0.30133,
+  "y": 0.06655
+ },
+ "Light World|Magic Bat": {
+  "world": "lw",
+  "x": 0.32419,
+  "y": 0.56115
+ },
+ "Light World|Master Sword Pedestal": {
+  "world": "lw",
+  "x": 0.04156,
+  "y": 0.04078
+ },
+ "Light World|Maze Race": {
+  "world": "lw",
+  "x": 0.03221,
+  "y": 0.69831
+ },
+ "Light World|Mini Moldorm Cave - Far Left": {
+  "world": "lw",
+  "x": 0.63383,
+  "y": 0.93833
+ },
+ "Light World|Mini Moldorm Cave - Far Right": {
+  "world": "lw",
+  "x": 0.66812,
+  "y": 0.93417
+ },
+ "Light World|Mini Moldorm Cave - Left": {
+  "world": "lw",
+  "x": 0.64214,
+  "y": 0.93521
+ },
+ "Light World|Mini Moldorm Cave - NPC": {
+  "world": "lw",
+  "x": 0.65046,
+  "y": 0.93417
+ },
+ "Light World|Mini Moldorm Cave - Right": {
+  "world": "lw",
+  "x": 0.65981,
+  "y": 0.93521
+ },
+ "Light World|Mushroom": {
+  "world": "lw",
+  "x": 0.12053,
+  "y": 0.08442
+ },
+ "Light World|Pegasus Rocks": {
+  "world": "lw",
+  "x": 0.39069,
+  "y": 0.29099
+ },
+ "Light World|Potion Shop": {
+  "world": "lw",
+  "x": 0.80008,
+  "y": 0.32944
+ },
+ "Light World|Sahasrahla": {
+  "world": "lw",
+  "x": 0.8084,
+  "y": 0.44789
+ },
+ "Light World|Sahasrahla's Hut - Left": {
+  "world": "lw",
+  "x": 0.8032,
+  "y": 0.43916
+ },
+ "Light World|Sahasrahla's Hut - Middle": {
+  "world": "lw",
+  "x": 0.80943,
+  "y": 0.4375
+ },
+ "Light World|Sahasrahla's Hut - Right": {
+  "world": "lw",
+  "x": 0.81463,
+  "y": 0.43854
+ },
+ "Light World|Sick Kid": {
+  "world": "lw",
+  "x": 0.1569,
+  "y": 0.5279
+ },
+ "Light World|Sunken Treasure": {
+  "world": "lw",
+  "x": 0.46031,
+  "y": 0.92898
+ },
+ "Light World|Waterfall Fairy - Left": {
+  "world": "lw",
+  "x": 0.89464,
+  "y": 0.1343
+ },
+ "Light World|Waterfall Fairy - Right": {
+  "world": "lw",
+  "x": 0.90607,
+  "y": 0.13534
+ },
+ "Light World|Zora's Ledge": {
+  "world": "lw",
+  "x": 0.9601,
+  "y": 0.13014
+ },
+ "Metroid|Bomb": {
+  "world": "me",
+  "x": 0.38462,
+  "y": 0.12445
+ },
+ "Metroid|Botwoon": {
+  "world": "me",
+  "x": 0.71114,
+  "y": 0.44467
+ },
+ "Metroid|Charge Beam": {
+  "world": "me",
+  "x": 0.20721,
+  "y": 0.51381
+ },
+ "Metroid|Crocomire": {
+  "world": "me",
+  "x": 0.63902,
+  "y": 0.80277
+ },
+ "Metroid|Draygon": {
+  "world": "me",
+  "x": 0.9355,
+  "y": 0.46724
+ },
+ "Metroid|Energy Tank (Hi-Jump Boots)": {
+  "world": "me",
+  "x": 0.53586,
+  "y": 0.75921
+ },
+ "Metroid|Energy Tank, Botwoon": {
+  "world": "me",
+  "x": 0.78425,
+  "y": 0.44526
+ },
+ "Metroid|Energy Tank, Brinstar Ceiling": {
+  "world": "me",
+  "x": 0.40501,
+  "y": 0.47427
+ },
+ "Metroid|Energy Tank, Brinstar Gate": {
+  "world": "me",
+  "x": 0.26042,
+  "y": 0.44526
+ },
+ "Metroid|Energy Tank, Crocomire": {
+  "world": "me",
+  "x": 0.68109,
+  "y": 0.80237
+ },
+ "Metroid|Energy Tank, Etecoons": {
+  "world": "me",
+  "x": 0.04407,
+  "y": 0.47273
+ },
+ "Metroid|Energy Tank, Firefleas": {
+  "world": "me",
+  "x": 0.94351,
+  "y": 0.81513
+ },
+ "Metroid|Energy Tank, Gauntlet": {
+  "world": "me",
+  "x": 0.22336,
+  "y": 0.0391
+ },
+ "Metroid|Energy Tank, Kraid": {
+  "world": "me",
+  "x": 0.57993,
+  "y": 0.62186
+ },
+ "Metroid|Energy Tank, Mama turtle": {
+  "world": "me",
+  "x": 0.624,
+  "y": 0.50216
+ },
+ "Metroid|Energy Tank, Ridley": {
+  "world": "me",
+  "x": 0.72115,
+  "y": 0.90343
+ },
+ "Metroid|Energy Tank, Terminator": {
+  "world": "me",
+  "x": 0.17428,
+  "y": 0.11856
+ },
+ "Metroid|Energy Tank, Waterway": {
+  "world": "me",
+  "x": 0.06911,
+  "y": 0.51688
+ },
+ "Metroid|Energy Tank, Wrecked Ship": {
+  "world": "me",
+  "x": 0.75521,
+  "y": 0.07441
+ },
+ "Metroid|Golden Torizo": {
+  "world": "me",
+  "x": 0.68109,
+  "y": 0.88812
+ },
+ "Metroid|Grapple Beam": {
+  "world": "me",
+  "x": 0.42368,
+  "y": 0.91029
+ },
+ "Metroid|Gravity Suit": {
+  "world": "me",
+  "x": 0.624,
+  "y": 0.09404
+ },
+ "Metroid|Hi-Jump Boots": {
+  "world": "me",
+  "x": 0.47075,
+  "y": 0.73762
+ },
+ "Metroid|Ice Beam": {
+  "world": "me",
+  "x": 0.51482,
+  "y": 0.6817
+ },
+ "Metroid|Kraid": {
+  "world": "me",
+  "x": 0.76122,
+  "y": 0.5938
+ },
+ "Metroid|Missile (Crateria bottom)": {
+  "world": "me",
+  "x": 0.28846,
+  "y": 0.28829
+ },
+ "Metroid|Missile (Crateria gauntlet left)": {
+  "world": "me",
+  "x": 0.13221,
+  "y": 0.06951
+ },
+ "Metroid|Missile (Crateria gauntlet right)": {
+  "world": "me",
+  "x": 0.13321,
+  "y": 0.08324
+ },
+ "Metroid|Missile (Crateria middle)": {
+  "world": "me",
+  "x": 0.22937,
+  "y": 0.1323
+ },
+ "Metroid|Missile (Crateria moat)": {
+  "world": "me",
+  "x": 0.52284,
+  "y": 0.08913
+ },
+ "Metroid|Missile (Draygon)": {
+  "world": "me",
+  "x": 0.97456,
+  "y": 0.4329
+ },
+ "Metroid|Missile (Gold Torizo)": {
+  "world": "me",
+  "x": 0.66707,
+  "y": 0.87399
+ },
+ "Metroid|Missile (Grapple Beam)": {
+  "world": "me",
+  "x": 0.52183,
+  "y": 0.87399
+ },
+ "Metroid|Missile (Gravity Suit)": {
+  "world": "me",
+  "x": 0.68209,
+  "y": 0.0754
+ },
+ "Metroid|Missile (Hi-Jump Boots)": {
+  "world": "me",
+  "x": 0.52083,
+  "y": 0.72977
+ },
+ "Metroid|Missile (Kraid)": {
+  "world": "me",
+  "x": 0.63802,
+  "y": 0.58752
+ },
+ "Metroid|Missile (Mickey Mouse room)": {
+  "world": "me",
+  "x": 0.8133,
+  "y": 0.80139
+ },
+ "Metroid|Missile (Norfair Reserve Tank)": {
+  "world": "me",
+  "x": 0.68109,
+  "y": 0.68857
+ },
+ "Metroid|Missile (Speed Booster)": {
+  "world": "me",
+  "x": 0.92849,
+  "y": 0.68857
+ },
+ "Metroid|Missile (Wave Beam)": {
+  "world": "me",
+  "x": 0.78526,
+  "y": 0.71702
+ },
+ "Metroid|Missile (Wrecked Ship middle)": {
+  "world": "me",
+  "x": 0.66607,
+  "y": 0.11856
+ },
+ "Metroid|Missile (Wrecked Ship top)": {
+  "world": "me",
+  "x": 0.79928,
+  "y": 0.03223
+ },
+ "Metroid|Missile (above Crocomire)": {
+  "world": "me",
+  "x": 0.57993,
+  "y": 0.74547
+ },
+ "Metroid|Missile (below Crocomire)": {
+  "world": "me",
+  "x": 0.60897,
+  "y": 0.87399
+ },
+ "Metroid|Missile (below Ice Beam)": {
+  "world": "me",
+  "x": 0.43269,
+  "y": 0.71702
+ },
+ "Metroid|Missile (blue Brinstar behind missile)": {
+  "world": "me",
+  "x": 0.35457,
+  "y": 0.45311
+ },
+ "Metroid|Missile (blue Brinstar bottom)": {
+  "world": "me",
+  "x": 0.35958,
+  "y": 0.49039
+ },
+ "Metroid|Missile (blue Brinstar middle)": {
+  "world": "me",
+  "x": 0.41967,
+  "y": 0.47371
+ },
+ "Metroid|Missile (blue Brinstar top)": {
+  "world": "me",
+  "x": 0.35557,
+  "y": 0.43741
+ },
+ "Metroid|Missile (bubble Norfair green door)": {
+  "world": "me",
+  "x": 0.71014,
+  "y": 0.68759
+ },
+ "Metroid|Missile (bubble Norfair)": {
+  "world": "me",
+  "x": 0.74119,
+  "y": 0.73174
+ },
+ "Metroid|Missile (green Brinstar behind missile)": {
+  "world": "me",
+  "x": 0.16326,
+  "y": 0.36776
+ },
+ "Metroid|Missile (green Brinstar behind reserve tank)": {
+  "world": "me",
+  "x": 0.15124,
+  "y": 0.36776
+ },
+ "Metroid|Missile (green Brinstar below super missile)": {
+  "world": "me",
+  "x": 0.11418,
+  "y": 0.38934
+ },
+ "Metroid|Missile (green Brinstar pipe)": {
+  "world": "me",
+  "x": 0.27444,
+  "y": 0.48843
+ },
+ "Metroid|Missile (green Maridia shinespark)": {
+  "world": "me",
+  "x": 0.50681,
+  "y": 0.50216
+ },
+ "Metroid|Missile (green Maridia tatori)": {
+  "world": "me",
+  "x": 0.63802,
+  "y": 0.51688
+ },
+ "Metroid|Missile (lava room)": {
+  "world": "me",
+  "x": 0.624,
+  "y": 0.71506
+ },
+ "Metroid|Missile (left Maridia sand pit room)": {
+  "world": "me",
+  "x": 0.65104,
+  "y": 0.5316
+ },
+ "Metroid|Missile (lower Norfair above fire flea room)": {
+  "world": "me",
+  "x": 0.91446,
+  "y": 0.72977
+ },
+ "Metroid|Missile (lower Norfair near Wave Beam)": {
+  "world": "me",
+  "x": 0.82732,
+  "y": 0.73076
+ },
+ "Metroid|Missile (outside Wrecked Ship bottom)": {
+  "world": "me",
+  "x": 0.54988,
+  "y": 0.10385
+ },
+ "Metroid|Missile (outside Wrecked Ship middle)": {
+  "world": "me",
+  "x": 0.55088,
+  "y": 0.06068
+ },
+ "Metroid|Missile (outside Wrecked Ship top)": {
+  "world": "me",
+  "x": 0.5629,
+  "y": 0.03223
+ },
+ "Metroid|Missile (pink Brinstar bottom)": {
+  "world": "me",
+  "x": 0.20032,
+  "y": 0.47469
+ },
+ "Metroid|Missile (pink Brinstar top)": {
+  "world": "me",
+  "x": 0.20032,
+  "y": 0.43153
+ },
+ "Metroid|Missile (pink Maridia)": {
+  "world": "me",
+  "x": 0.71014,
+  "y": 0.46096
+ },
+ "Metroid|Missile (red Brinstar spike room)": {
+  "world": "me",
+  "x": 0.44872,
+  "y": 0.48745
+ },
+ "Metroid|Missile (right Maridia sand pit room)": {
+  "world": "me",
+  "x": 0.69511,
+  "y": 0.5316
+ },
+ "Metroid|Missile (yellow Maridia false wall)": {
+  "world": "me",
+  "x": 0.65405,
+  "y": 0.41681
+ },
+ "Metroid|Missile (yellow Maridia super missile)": {
+  "world": "me",
+  "x": 0.51883,
+  "y": 0.39915
+ },
+ "Metroid|Morphing Ball": {
+  "world": "me",
+  "x": 0.32051,
+  "y": 0.47371
+ },
+ "Metroid|Mother Brain": {
+  "world": "me",
+  "x": 0.14523,
+  "y": 0.2877
+ },
+ "Metroid|Phantoon": {
+  "world": "me",
+  "x": 0.77123,
+  "y": 0.16114
+ },
+ "Metroid|Plasma Beam": {
+  "world": "me",
+  "x": 0.77023,
+  "y": 0.35795
+ },
+ "Metroid|Power Bomb (Crateria surface)": {
+  "world": "me",
+  "x": 0.47877,
+  "y": 0.04694
+ },
+ "Metroid|Power Bomb (Crocomire)": {
+  "world": "me",
+  "x": 0.53486,
+  "y": 0.80336
+ },
+ "Metroid|Power Bomb (Power Bombs of shame)": {
+  "world": "me",
+  "x": 0.87139,
+  "y": 0.86026
+ },
+ "Metroid|Power Bomb (blue Brinstar)": {
+  "world": "me",
+  "x": 0.29046,
+  "y": 0.47371
+ },
+ "Metroid|Power Bomb (green Brinstar bottom)": {
+  "world": "me",
+  "x": 0.13021,
+  "y": 0.43153
+ },
+ "Metroid|Power Bomb (lower Norfair above fire flea room)": {
+  "world": "me",
+  "x": 0.94752,
+  "y": 0.74743
+ },
+ "Metroid|Power Bomb (pink Brinstar)": {
+  "world": "me",
+  "x": 0.17328,
+  "y": 0.44428
+ },
+ "Metroid|Power Bomb (red Brinstar sidehopper room)": {
+  "world": "me",
+  "x": 0.46274,
+  "y": 0.44428
+ },
+ "Metroid|Power Bomb (red Brinstar spike room)": {
+  "world": "me",
+  "x": 0.46274,
+  "y": 0.48843
+ },
+ "Metroid|Power Bomb (right Maridia sand pit room)": {
+  "world": "me",
+  "x": 0.71114,
+  "y": 0.54337
+ },
+ "Metroid|Reserve Tank, Brinstar": {
+  "world": "me",
+  "x": 0.14223,
+  "y": 0.35402
+ },
+ "Metroid|Reserve Tank, Maridia": {
+  "world": "me",
+  "x": 0.66506,
+  "y": 0.54435
+ },
+ "Metroid|Reserve Tank, Norfair": {
+  "world": "me",
+  "x": 0.66807,
+  "y": 0.68857
+ },
+ "Metroid|Reserve Tank, Wrecked Ship": {
+  "world": "me",
+  "x": 0.69912,
+  "y": 0.04694
+ },
+ "Metroid|Ridley": {
+  "world": "me",
+  "x": 0.74119,
+  "y": 0.90146
+ },
+ "Metroid|Right Super, Wrecked Ship": {
+  "world": "me",
+  "x": 0.79928,
+  "y": 0.1323
+ },
+ "Metroid|Screw Attack": {
+  "world": "me",
+  "x": 0.69812,
+  "y": 0.91225
+ },
+ "Metroid|Space Jump": {
+  "world": "me",
+  "x": 0.91046,
+  "y": 0.47469
+ },
+ "Metroid|Spazer": {
+  "world": "me",
+  "x": 0.48177,
+  "y": 0.54729
+ },
+ "Metroid|Speed Booster": {
+  "world": "me",
+  "x": 0.97256,
+  "y": 0.68955
+ },
+ "Metroid|Spore Spawn": {
+  "world": "me",
+  "x": 0.27444,
+  "y": 0.37011
+ },
+ "Metroid|Spring Ball": {
+  "world": "me",
+  "x": 0.84235,
+  "y": 0.55809
+ },
+ "Metroid|Super Missile (Crateria)": {
+  "world": "me",
+  "x": 0.34655,
+  "y": 0.16075
+ },
+ "Metroid|Super Missile (Gold Torizo)": {
+  "world": "me",
+  "x": 0.68109,
+  "y": 0.87301
+ },
+ "Metroid|Super Missile (Wrecked Ship left)": {
+  "world": "me",
+  "x": 0.70913,
+  "y": 0.13132
+ },
+ "Metroid|Super Missile (green Brinstar bottom)": {
+  "world": "me",
+  "x": 0.02504,
+  "y": 0.47273
+ },
+ "Metroid|Super Missile (green Brinstar top)": {
+  "world": "me",
+  "x": 0.09916,
+  "y": 0.37266
+ },
+ "Metroid|Super Missile (green Maridia)": {
+  "world": "me",
+  "x": 0.52183,
+  "y": 0.49039
+ },
+ "Metroid|Super Missile (pink Brinstar)": {
+  "world": "me",
+  "x": 0.30349,
+  "y": 0.459
+ },
+ "Metroid|Super Missile (pink Maridia)": {
+  "world": "me",
+  "x": 0.72516,
+  "y": 0.45998
+ },
+ "Metroid|Super Missile (yellow Maridia)": {
+  "world": "me",
+  "x": 0.51783,
+  "y": 0.41289
+ },
+ "Metroid|Varia Suit": {
+  "world": "me",
+  "x": 0.78726,
+  "y": 0.60223
+ },
+ "Metroid|Wave Beam": {
+  "world": "me",
+  "x": 0.87139,
+  "y": 0.70819
+ },
+ "Metroid|X-Ray Scope": {
+  "world": "me",
+  "x": 0.29046,
+  "y": 0.54533
+ }
+}

@@ -1,0 +1,10 @@
+# Build traces
+.build/
+*.pyc
+__pycache__/
+
+# The MiSTer's address belongs to whoever builds, not in a public repo
+.mister-ip
+
+# Your own machine and share names for the guard - not for a public repo
+.private-words

@@ -1,0 +1,25 @@
+---
+name: SMZ3 and ALTTPR logic
+version: "1.1.0"
+slug: smz3_logic
+description: >-
+  Reachability logic for the randomizer tracker on MiSTer FPGA. Answers
+  "which locations can I reach with this inventory" using Archipelago's
+  own logic.
+url: https://github.com/frystien-png/mister-randomizer
+# All three architectures HA OS runs on. python:3.12-slim exists for all.
+arch:
+  - amd64
+  - aarch64
+  - armv7
+init: false
+# The MiSTer calls the service over the network, so the port must be
+# published on the host IP - not only inside the Docker network.
+ports:
+  8183/tcp: 8183
+ports_description:
+  8183/tcp: The logic service. The MiSTer calls this port.
+options:
+  mister_ip: ""
+schema:
+  mister_ip: str?
