@@ -223,6 +223,27 @@ själv.
 Har du redan en egen `page.py` lämnar installationen den orörd och lägger
 sin egen bredvid som `page.py.ny`.
 
+---
+
+## Licens och tack
+
+Projektet är **MIT-licensierat** — se [LICENSE](LICENSE). Använd, ändra och
+sprid; behåll upphovsrättsraden och räkna inte med några garantier.
+
+Det står på andras arbete:
+
+| | |
+|---|---|
+| [Archipelago](https://github.com/ArchipelagoMW/Archipelago) (MIT) | själva åtkomstlogiken. Tillägget pinnar den till en exakt commit och svarar med dess regler, inte med egna. |
+| [hutchch/ALTTPR-Tracker](https://github.com/hutchch/ALTTPR-Tracker) (MIT) | kisttabellen som kopplar varje ALTTP-plats till sin exakta SRAM-flagga, och upplägget för medaljongvalet. |
+| [TotalSMZ3](https://github.com/tewtal/SMZ3Randomizer) | SMZ3-logiken och den ROM-layout combo-bygget följer. |
+| [pyz3r](https://github.com/tcprescott/pyz3r) (Apache-2.0) | tre vendorade filer för att applicera ALTTPR-patchar. Ändrat: aiohttp utbytt mot urllib, eftersom MiSTern saknar pip. Licens och NOTICE följer med i paketet. |
+| [bps](https://pypi.org/project/bps/) (WTFPL) | vendorad BPS-patchning. COPYING följer med i paketet. |
+| [snid](https://github.com/NobodyNada/snid) av NobodyNada | daemonen som gör live-läsning av SNES-minnet möjlig. Hämtas på begäran, paketeras aldrig. |
+| alttpr.com och samus.link | seedgenerering och sprites. Bara patchdata utväxlas; ingen ROM laddas någonsin upp. |
+
+**Ingen speldata av något slag ingår** — se avsnittet *Vad som INTE ingår*.
+
 ## För den som bygger vidare
 
 ```

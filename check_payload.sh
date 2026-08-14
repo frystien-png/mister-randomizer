@@ -172,8 +172,13 @@ LEAKS='(^|[^0-9.])(10\.[0-9]{1,3}|192\.168\.[0-9]{1,3}|172\.(1[6-9]|2[0-9]|3[01]
       |([0-9a-fA-F]{2}:){5}[0-9a-fA-F]{2}
       |username=|password=|passwd=|psk=
       |Bearer [A-Za-z0-9_-]{20}|eyJ[A-Za-z0-9_-]{20}
-      |BEGIN [A-Z ]*PRIVATE KEY
-      |[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}'
+      |BEGIN [A-Z ]*PRIVATE KEY'
+
+# Mail addresses are their own rule, because LICENCE FILES legitimately carry
+# one - the WTFPL text names Sam Hocevar with his address, and refusing to ship
+# it would mean shipping the code without its licence. Everywhere else an
+# address is a leak.
+MAIL='[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}'
 
 # ⚠️ Your own words - machine names, share names, user names - do NOT belong
 # here. The first version listed them in plain text, which put them in a public
@@ -191,7 +196,8 @@ if [ -f "$PRIVATE" ]; then
     [ -n "$EXTRA" ] && LEAKS="$LEAKS|$EXTRA"
 fi
 
-RE_LEAK="$(join "$LEAKS")"
+RE_LEAK="$(join "$LEAKS")|$(join "$MAIL")"
+RE_LEAK_LICENCE="$(join "$LEAKS")"
 
 # ⚠️ The hits are collected in a file rather than counted in the loop. A while
 # loop behind a pipe runs in a SUBSHELL, so a counter incremented there is back
@@ -206,8 +212,13 @@ for f in $FILES; do
         text/*|*charset=us-ascii|*charset=utf-8) ;;
         *) continue ;;
     esac
+    # A licence file is judged without the mail rule - see MAIL above.
+    re="$RE_LEAK"
+    case "$(basename "$f")" in
+        LICENSE|LICENCE|COPYING|NOTICE) re="$RE_LEAK_LICENCE" ;;
+    esac
     # Known example addresses are removed BEFORE the judgement.
-    grep -nE "$RE_LEAK" "$ROOT/$f" 2>/dev/null \
+    grep -nE "$re" "$ROOT/$f" 2>/dev/null \
         | grep -vE "$IP_EXAMPLES" \
         | cut -c1-120 \
         | sed "s|^|$f:|" >> "$HITS"

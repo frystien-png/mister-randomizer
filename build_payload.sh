@@ -144,6 +144,15 @@ for d in pyz3r bps; do
         scp -q "root@$MISTER:/media/fat/Scripts/.randomizer/$d/$f" \
                "$BUILD/randomizer/$d/$f"
     done
+    # ⚠️ The licence files travel WITH the code, not just in the README.
+    # pyz3r is Apache-2.0, which requires the licence text to be included and
+    # modifications to be stated; bps is WTFPL and its own headers point at a
+    # COPYING file. Vendoring the code without them is a licence violation,
+    # quietly, in every copy that goes out.
+    for f in LICENSE NOTICE COPYING; do
+        scp -q "root@$MISTER:/media/fat/Scripts/.randomizer/$d/$f" \
+               "$BUILD/randomizer/$d/$f" 2>/dev/null || true
+    done
 done
 
 mkdir -p "$BUILD/randomizer/base"

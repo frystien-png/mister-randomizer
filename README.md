@@ -270,6 +270,28 @@ puts its own next to it as `page.py.ny`.
 
 ---
 
+---
+
+## Licence and credits
+
+This project is **MIT licensed** — see [LICENSE](LICENSE). Use it, change it,
+redistribute it; keep the copyright notice and expect no warranty.
+
+It stands on other people's work:
+
+| | |
+|---|---|
+| [Archipelago](https://github.com/ArchipelagoMW/Archipelago) (MIT) | the reachability logic itself. The add-on pins it to one exact commit and answers with its rules, not with rules of ours. |
+| [hutchch/ALTTPR-Tracker](https://github.com/hutchch/ALTTPR-Tracker) (MIT) | the chest-flag table that maps each ALTTP location to its exact SRAM flag, and the way the medallion choice is handled. |
+| [TotalSMZ3](https://github.com/tewtal/SMZ3Randomizer) | the SMZ3 logic and the ROM layout the combo build follows. |
+| [pyz3r](https://github.com/tcprescott/pyz3r) (Apache-2.0) | three vendored files for applying ALTTPR patches. Modified: aiohttp swapped for urllib, because the MiSTer has no pip. Licence and NOTICE ship inside the package. |
+| [bps](https://pypi.org/project/bps/) (WTFPL) | vendored BPS patching. COPYING ships inside the package. |
+| [snid](https://github.com/NobodyNada/snid) by NobodyNada | the daemon that makes live reading of SNES memory possible. Downloaded on request, never bundled. |
+| alttpr.com and samus.link | seed generation and the sprites. Nothing but patch data is exchanged; no ROM is ever uploaded. |
+
+**No game data of any kind is included** — see the *What is not included*
+section above.
+
 ## For anyone building on this
 
 ```
