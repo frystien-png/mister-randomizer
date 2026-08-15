@@ -256,6 +256,7 @@ does not update — not as an error message.
 | Symptom | Likely cause |
 |---|---|
 | The page does not respond at all | The server is not running. Run `Randomizer_install` again. |
+| A game starts but the screen stays black | Almost always the MiSTer's own video settings, not this. A fixed `video_mode` together with `vsync_adjust=1` outputs 50 Hz for PAL games, and many TVs refuse that mode - the game is running, you just cannot see it. Check the save folder: if `saves/<core>/<game>.eep` or `.sra` appeared, the ROM did load. Fix with `vsync_adjust=0` in `MiSTer.ini`. |
 | The map shows but the dots have no colour | The add-on is not answering. Check its log and `mister_ip`. |
 | The map does not update after playing | You have not opened the OSD. The save file has not been flushed. |
 | Parts of the page are in Swedish | That language file does not translate those strings yet. Run `lang_check.py`. |

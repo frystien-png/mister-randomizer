@@ -215,6 +215,7 @@ uppdateras — inte som ett felmeddelande.
 | Symptom | Trolig orsak |
 |---|---|
 | Sidan svarar inte alls | Servern körs inte. `Randomizer_install` igen. |
+| Spelet startar men skärmen förblir svart | Nästan alltid MiSTerns egna bildinställningar, inte det här. Ett fast `video_mode` tillsammans med `vsync_adjust=1` ger 50 Hz för PAL-spel, och många TV-apparater vägrar det läget — spelet kör, du ser det bara inte. Kolla sparmappen: dök `saves/<core>/<spel>.eep` eller `.sra` upp har ROM:en laddats. Rätta med `vsync_adjust=0` i `MiSTer.ini`. |
 | Kartan visas men prickarna är färglösa | Tillägget svarar inte. Kolla dess logg och `mister_ip`. |
 | Kartan uppdateras inte efter spelande | Du har inte öppnat OSD:n. Sparfilen är inte utskriven än. |
 | "Fel ROM" trots rätt spel | Du har en annan dump. Kontrollera md5 mot listan ovan. |
