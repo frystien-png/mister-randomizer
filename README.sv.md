@@ -157,6 +157,10 @@ Koden är skriven på engelska sedan 2026-08-14, så svenskan är numera en
 Lägg till båda sidorna i Home Assistant som var sitt kort av typen
 **webbsida** med MiSTerns adress, så når du dem från telefonen.
 
+Spel i `.zip` fungerar precis som lösa filer — startaren löser upp sökvägen
+in i arkivet, vilket en MGL kräver. En samling med båda sorterna fungerar
+utan vidare.
+
 Bläddraren läser om spelmapparna var femtonde minut, och direkt om du
 anropar `http://<mister-ip>:8182/api/rescan`. Nya spel dyker alltså upp av
 sig själva utan omstart.

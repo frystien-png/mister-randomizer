@@ -191,6 +191,10 @@ they are escaped for the position they land in.
 Add both pages to Home Assistant as **webpage** cards with the MiSTer's
 address and you can reach them from your phone.
 
+Games in `.zip` archives work the same as loose files — the launcher
+resolves the path into the archive, which an MGL requires. A collection
+mixing both is fine.
+
 The browser re-indexes the game folders every fifteen minutes, and
 immediately if you call `http://<mister-ip>:8182/api/rescan`. New games
 appear on their own, no restart needed.
