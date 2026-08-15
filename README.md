@@ -184,6 +184,7 @@ they are escaped for the position they land in.
 |---|---|
 | **Game browser** | `http://<mister-ip>:8182/` |
 | **Seed page** | `http://<mister-ip>:8182/seeds` |
+| **Back to the menu** | the `⏏ Menu` button in the header, shown while a game is running |
 | **New ALTTPR seed** | MiSTer menu → Scripts → `ALTTPR_new_seed` |
 | **New SMZ3 seed** | MiSTer menu → Scripts → `SMZ3_new_seed` |
 

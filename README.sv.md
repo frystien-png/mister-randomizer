@@ -150,6 +150,7 @@ Koden är skriven på engelska sedan 2026-08-14, så svenskan är numera en
 |---|---|
 | **Spelbläddraren** | `http://<mister-ip>:8182/` |
 | **Seed-sidan** | `http://<mister-ip>:8182/seeds` |
+| **Tillbaka till menyn** | knappen `⏏ Meny` i sidhuvudet, syns när ett spel kör |
 | **Ny ALTTPR-seed** | MiSTer-menyn → Scripts → `ALTTPR_new_seed` |
 | **Ny SMZ3-seed** | MiSTer-menyn → Scripts → `SMZ3_new_seed` |
 
