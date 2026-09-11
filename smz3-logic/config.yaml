@@ -1,6 +1,6 @@
 ---
 name: SMZ3 and ALTTPR logic
-version: "1.1.0"
+version: "1.1.1"
 slug: smz3_logic
 description: >-
   Reachability logic for the randomizer tracker on MiSTer FPGA. Answers

@@ -458,7 +458,8 @@ class Handler(BaseHTTPRequestHandler):
                                 body.get("rewards") or None,
                                 tuple(body.get("medals") or
                                       ("Ether", "Quake")),
-                                klara=body.get("klara"))
+                                klara=body.get("klara"),
+                                sm_lasta=body.get("sm_lasta"))
 
     @staticmethod
     def _smz3missing(body):
@@ -468,7 +469,8 @@ class Handler(BaseHTTPRequestHandler):
                                   body.get("rewards") or None,
                                   tuple(body.get("medals") or
                                         ("Ether", "Quake")),
-                                  klara=body.get("klara"))
+                                  klara=body.get("klara"),
+                                  sm_lasta=body.get("sm_lasta"))
 
     def do_POST(self):
         if self.path == "/smz3missing":

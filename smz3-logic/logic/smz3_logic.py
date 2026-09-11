@@ -165,7 +165,8 @@ ZELDA_PRIS = ["Castle Tower", "Eastern Palace", "Desert Palace",
               "Turtle Rock"]
 
 
-def build_world(rewards=None, medallions=("Ether", "Quake"), klara=None):
+def build_world(rewards=None, medallions=("Ether", "Quake"), klara=None,
+                sm_lasta=None):
     """An SMZ3 world with the seed's prizes and medallions substituted in.
 
         WorldState.Generate randomises prizes, medallions and drop tables. We
@@ -202,12 +203,19 @@ def build_world(rewards=None, medallions=("Ether", "Quake"), klara=None):
     # the reward count only once it has actually been collected, which is the
     # same meaning the ALTTP half already has.
     #
-    # The Metroid areas' bosses cannot be read from the save file yet, so they
-    # are left as they are - otherwise their boss tokens would lock for good.
+    # The Metroid areas' boss flags cannot be read from the save file, but a
+    # PENDANT or CRYSTAL they give lands in the same SRAM bytes as Zelda's
+    # (0x374/0x37A), and the ROM says which bit each boss sets. `sm_lasta` names
+    # the Metroid regions the server could read that way. Anything else - boss
+    # tokens above all - is left as it is, otherwise it would lock for good.
+    #
+    # Found 2026-09-11: the Green Pendant sat on Phantoon, and Sahasrahla showed
+    # as reachable because Wrecked Ship COULD be cleared.
     if klara is not None:
         klar = set(klara)
+        lasta = set(ZELDA_PRIS) | set(sm_lasta or ())
         for r in w.Regions:
-            if isinstance(r, IReward) and r.Name in ZELDA_PRIS:
+            if isinstance(r, IReward) and r.Name in lasta:
                 r.CanComplete = (lambda taget: (lambda items: taget))(
                     r.Name in klar)
 
@@ -239,11 +247,13 @@ def _handout(w):
     return ut
 
 
-def get_world(rewards=None, medallions=("Ether", "Quake"), klara=None):
+def get_world(rewards=None, medallions=("Ether", "Quake"), klara=None,
+              sm_lasta=None):
     key = (_reward_key(rewards), tuple(medallions),
-           None if klara is None else tuple(sorted(klara)))
+           None if klara is None else tuple(sorted(klara)),
+           tuple(sorted(sm_lasta or ())))
     if key not in _worlds:
-        w = build_world(rewards, medallions, klara)
+        w = build_world(rewards, medallions, klara, sm_lasta)
         _worlds[key] = {
             "w": w,
             "handout": _handout(w),
@@ -264,10 +274,10 @@ def to_items(names, extra=()):
 
 
 def reach(names, rewards=None, medallions=("Ether", "Quake"), keys=True,
-          klara=None):
+          klara=None, sm_lasta=None):
     """Which locations are reachable with this inventory."""
     t0 = time.time()
-    entry = get_world(rewards, medallions, klara)
+    entry = get_world(rewards, medallions, klara, sm_lasta)
     items = to_items(names, entry["handout"] if keys else ())
     ok, no = [], []
     for loc in entry["w"].Locations:
@@ -306,7 +316,7 @@ for _kort, _dungeon in [
 
 
 def missing(name, names, rewards=None, medallions=("Ether", "Quake"),
-            klara=None):
+            klara=None, sm_lasta=None):
     """What is missing to reach a location?
 
         "single" = items that are enough on their own (OR between them).
@@ -321,7 +331,7 @@ def missing(name, names, rewards=None, medallions=("Ether", "Quake"),
         and keys stay outside: they are handed out anyway and would only be
         noise.
     """
-    entry = get_world(rewards, medallions, klara)
+    entry = get_world(rewards, medallions, klara, sm_lasta)
     w = entry["w"]
     bak = {v: k for k, v in LOC_ALIAS.items()}
     loc = next((l for l in w.Locations
