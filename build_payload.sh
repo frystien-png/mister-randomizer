@@ -128,7 +128,7 @@ PYEOF
 # ------------------------------------------------------------------ .randomizer
 # The generators. NOT: base/ (the user's own ROMs - must not be distributed),
 # backup-*/ and *.pyc.
-RND_FILES="gen_alttpr.py gen_smz3.py smz3build.py pngkrop.py
+RND_FILES="gen_alttpr.py gen_smz3.py smz3build.py pngkrop.py net_reason.py
            fyll_samus_bilder.py zsm.ips"
 
 for f in $RND_FILES; do
