@@ -33,7 +33,8 @@ stays readable.
 
 <p align="center">
   <em>Green is reachable now, red is locked, grey is done. The badges count the
-  chests left in each dungeon. Shown in Swedish here - English, Spanish, French
+  chests left in each dungeon. Bosses are diamonds, and they turn grey the
+  moment they fall. Shown in Swedish here - English, Spanish, French
   and Polish ship with it too.</em>
 </p>
 

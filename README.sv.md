@@ -31,7 +31,8 @@ fåtal spel samlas bakom en enda ruta så att startsidan går att överblicka.
 
 <p align="center">
   <em>Grönt går att nå nu, rött är låst, grått är klart. Etiketterna räknar
-  kistorna som är kvar i varje dungeon.</em>
+  kistorna som är kvar i varje dungeon. Bossarna är romber, och de gråas ut i
+  samma stund de faller.</em>
 </p>
 
 <p align="center">
