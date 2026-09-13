@@ -268,6 +268,10 @@ does not update — not as an error message.
 Log on the MiSTer: `/tmp/mistergames.log`.
 Logic service: `curl http://<home-assistant>:8183/health`.
 
+**Still stuck, or got an idea?** Ask in
+[Discussions](https://github.com/frystien-png/mister-randomizer/discussions). Questions, requests and
+"here is how I set mine up" are all welcome - no issue needed.
+
 ---
 
 ## What is *not* included

@@ -226,6 +226,10 @@ uppdateras — inte som ett felmeddelande.
 Logg på MiSTern: `/tmp/mistergames.log`.
 Logiktjänsten: `curl http://<home-assistant>:8183/health`.
 
+**Fastnat, eller har du en idé?** Fråga i
+[Discussions](https://github.com/frystien-png/mister-randomizer/discussions). Frågor, önskemål och
+"så här ser min uppsättning ut" är lika välkomna - ingen issue behövs.
+
 ## Vad som INTE ingår
 
 **Inga ROM, inga skivavbilder, ingenting upphovsrättsskyddat.** Paketet är
