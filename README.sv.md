@@ -36,12 +36,12 @@ fåtal spel samlas bakom en enda ruta så att startsidan går att överblicka.
 </p>
 
 <p align="center">
-  <img src="docs/item-grid.png" alt="Ett SMZ3-seedkort med föremålsrutnätet för båda spelen" width="640">
+  <img src="docs/item-grid.png" alt="Ett ALTTPR-kort och ett SMZ3-kort bredvid varandra, båda med föremålsrutnät" width="900">
 </p>
 
 <p align="center">
-  <em>Det du plockat upp, båda spelen på samma kort: tänt när det är hittat,
-  med antalet i hörnet. Ikonerna här är spelarens egen kopia — se
+  <em>Det du plockat upp, tänt när det är hittat och med antalet i hörnet —
+  och ett SMZ3-kort visar båda spelen. Ikonerna här är spelarens egen kopia — se
   <a href="#vad-som-inte-ingår">Vad som INTE ingår</a>.</em>
 </p>
 

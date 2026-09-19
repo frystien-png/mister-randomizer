@@ -39,12 +39,12 @@ stays readable.
 </p>
 
 <p align="center">
-  <img src="docs/item-grid.png" alt="An SMZ3 seed card with the item grid for both games" width="640">
+  <img src="docs/item-grid.png" alt="An ALTTPR card and an SMZ3 card side by side, each with its item grid" width="900">
 </p>
 
 <p align="center">
-  <em>What you have picked up, both games on one card: lit when found, with
-  the count in the corner. The icons here are the player's own copy - see
+  <em>What you have picked up, lit when found, with the count in the corner -
+  and an SMZ3 card shows both games. The icons here are the player's own copy - see
   <a href="#what-is-not-included">What is not included</a>.</em>
 </p>
 
