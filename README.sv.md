@@ -36,6 +36,16 @@ fåtal spel samlas bakom en enda ruta så att startsidan går att överblicka.
 </p>
 
 <p align="center">
+  <img src="docs/item-grid.png" alt="Ett SMZ3-seedkort med föremålsrutnätet för båda spelen" width="640">
+</p>
+
+<p align="center">
+  <em>Det du plockat upp, båda spelen på samma kort: tänt när det är hittat,
+  med antalet i hörnet. Ikonerna här är spelarens egen kopia — se
+  <a href="#vad-som-inte-ingår">Vad som INTE ingår</a>.</em>
+</p>
+
+<p align="center">
   <img src="docs/game-browser.png" alt="Spelbläddraren med alla system på kortet" width="900">
 </p>
 
@@ -253,6 +263,15 @@ själv.
 
 Har du redan en egen `page.py` lämnar installationen den orörd och lägger
 sin egen bredvid som `page.py.ny`.
+
+**Inga föremålsikoner.** Varje seedkort har ett rutnät över det du plockat
+upp, uppställt som i communityns trackers. Ikonerna i det är spelens egen
+grafik och kan därför inte följa med; utan dem visar varje ruta ett kort ord
+i stället, och rutnätet fungerar likadant. Vill du ha bilder lägger du
+32×32-PNG:er i en mapp `items/` bredvid seedsidan (i Home Assistant
+`/config/www/items/`). Filnamnen är de som `invZelda`/`invMetroid` i
+`seedpage.py` frågar efter — `bow1.png`, `sword3.png`, `sm-Morph.png` och så
+vidare.
 
 ---
 

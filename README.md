@@ -39,6 +39,16 @@ stays readable.
 </p>
 
 <p align="center">
+  <img src="docs/item-grid.png" alt="An SMZ3 seed card with the item grid for both games" width="640">
+</p>
+
+<p align="center">
+  <em>What you have picked up, both games on one card: lit when found, with
+  the count in the corner. The icons here are the player's own copy - see
+  <a href="#what-is-not-included">What is not included</a>.</em>
+</p>
+
+<p align="center">
   <img src="docs/game-browser.png" alt="The game browser listing every system on the card" width="900">
 </p>
 
@@ -298,6 +308,14 @@ own network mount works — but setting it up is on you.
 
 If you already have your own `page.py`, the installer leaves it alone and
 puts its own next to it as `page.py.ny`.
+
+**No item icons.** Each seed card has a grid of what you have picked up,
+laid out like the community trackers. The icons in it are the games' own
+graphics, so they cannot ship; without them every cell shows a short word
+instead, and the grid works the same. To get pictures, put 32×32 PNGs in an
+`items/` folder next to the seed page (in Home Assistant, `/config/www/items/`).
+The file names are the ones `invZelda`/`invMetroid` in `seedpage.py` ask for —
+`bow1.png`, `sword3.png`, `sm-Morph.png` and so on.
 
 ---
 
