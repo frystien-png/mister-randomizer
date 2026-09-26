@@ -19,7 +19,7 @@
 # ============================================================================
 set -uo pipefail
 
-VERSION="1.3.10"
+VERSION="1.3.11"
 
 # Where the package is fetched from if it is not already next to this script.
 # That way it is enough to put THIS file in Scripts/ - it fetches the rest
@@ -182,7 +182,11 @@ INSTALL_PAGE=1
 if [ -f "$MG/page.py" ]; then
     if grep -q "$STAMP" "$MG/page.py" 2>/dev/null; then
         info "page.py: updating the game browser from the package"
-    elif grep -q "Attrapp\|placeholder" "$MG/page.py" 2>/dev/null; then
+    # ⚠️ The word alone is not enough: "placeholder" is also an HTML attribute,
+    # and every browser with a search box has one. Up to 1.3.10 that
+    # overwrote a real browser. The stub was a few lines; a browser is 15 KB+.
+    elif [ "$(wc -c < "$MG/page.py")" -lt 4096 ] \
+            && grep -q "Attrapp\|placeholder" "$MG/page.py" 2>/dev/null; then
         info "page.py: replacing the old placeholder with the real browser"
     else
         INSTALL_PAGE=0
