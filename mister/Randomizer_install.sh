@@ -19,7 +19,7 @@
 # ============================================================================
 set -uo pipefail
 
-VERSION="1.3.11"
+VERSION="1.3.12"
 
 # Where the package is fetched from if it is not already next to this script.
 # That way it is enough to put THIS file in Scripts/ - it fetches the rest
@@ -45,7 +45,7 @@ MARK_END="# <<< randomizer install <<<"
 # progress.json holds their dungeon rewards, spoilers.json what they chose to
 # look at. Zeroing those on an update would erase their run.
 KEEP="progress.json medallions.json spoilers.json checks.json logic.json
-      annotations.json"
+      annotations.json completed.json"
 
 # --- output ---------------------------------------------------------------
 heading() { echo; echo "=== $* ==="; }
