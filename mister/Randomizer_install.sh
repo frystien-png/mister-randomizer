@@ -19,7 +19,7 @@
 # ============================================================================
 set -uo pipefail
 
-VERSION="1.3.14"
+VERSION="1.3.15"
 
 # Where the package is fetched from if it is not already next to this script.
 # That way it is enough to put THIS file in Scripts/ - it fetches the rest
