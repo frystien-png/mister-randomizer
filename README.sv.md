@@ -1,6 +1,6 @@
 # Randomizer och spelbläddrare för MiSTer FPGA
 
-*Svenska · [English](README.md)*
+*[English](README.md) · [Español](README.es.md) · [Français](README.fr.md) · [Polski](README.pl.md) · Svenska*
 
 Två saker som delar samma lilla webbserver på MiSTern, båda gjorda för att
 styras från telefonen:
@@ -101,7 +101,7 @@ kontrollera att logiken svarar innan den säger sig vara klar.
    ```
    https://github.com/frystien-png/mister-randomizer
    ```
-3. Stäng rutan, leta upp **SMZ3- och ALTTPR-logik** → **Installera**
+3. Stäng rutan, leta upp **SMZ3 and ALTTPR logic** → **Installera**
 4. Fliken **Konfiguration** → fyll i MiSTerns IP-adress → **Spara**
 5. **Starta**
 
@@ -126,10 +126,11 @@ Kör sedan **Scripts → Randomizer_install** i MiSTer-menyn.
 *Utan internet på MiSTern:* lägg `randomizer-payload.tar.gz` bredvid
 skriptet, så används den i stället för nedladdningen.
 
-Installationen letar själv upp Home Assistant, lägger ut filerna, skapar
-menyposterna, ordnar autostart och startar servern. Den går att köra om
-när som helst — dina anteckningar och kartmarkeringar rörs inte, och en
-befintlig uppsättning skrivs inte över.
+Installationen letar själv upp Home Assistant, lägger ut filerna, frågar
+vilket språk du vill ha, skapar menyposterna, ordnar autostart och startar
+servern. Den går att köra om när som helst — dina anteckningar,
+kartmarkeringar och sluttider rörs inte, och en befintlig uppsättning
+skrivs inte över.
 
 ## Språk
 
@@ -141,7 +142,15 @@ MISTER_LANG="sv"
 ```
 
 Ändra raden och starta om MiSTern för att byta språk — ingen ominstallation
-behövs. Med följer `en` (källspråk och standard), `es`, `fr`, `pl` och `sv`.
+behövs.
+
+| Kod | Språk |
+|---|---|
+| `en` | English *(källspråket, och standard)* |
+| `es` | Español |
+| `fr` | Français |
+| `pl` | Polski |
+| `sv` | Svenska |
 
 ### Eget språk
 
@@ -155,15 +164,26 @@ Allt som behövs ligger redan på MiSTern, i `.mistergames/lang/`:
    översättning fungerar utmärkt.
 5. Kör installationen igen och välj språket ur menyn.
 
-`python3 lang_check.py` granskar filerna: den visar hur stor del av mallen
-du täckt och stoppar de två fel som faktiskt går sönder — en nyckel som
-inte finns i sidorna (nästan alltid ett stavfel, ett saknat avslutande
-mellanslag räcker) och en nyckel som också används som CSS-klass.
+Bredvid språkfilerna ligger två verktyg:
 
-⚠️ **Föremålsnamnen står på engelska i alla språk utom svenska.** Det är
-med flit: randomizersamfundet använder de engelska namnen oavsett språk.
-Koden är skriven på engelska sedan 2026-08-14, så svenskan är numera en
-översättning som alla andra.
+```
+python3 lang_check.py          granskar alla språkfiler
+python3 lang_extract.py        bygger om mallen ur sidorna
+```
+
+`lang_check.py` är den som är värd att köra. Den visar hur stor del av
+mallen du täckt och stoppar de två fel som faktiskt går sönder — en nyckel
+som inte finns i sidorna (nästan alltid ett stavfel, ett saknat avslutande
+mellanslag räcker) och en nyckel som också används som CSS-klass eller
+filnamn, vilket skulle översätta sidans maskineri i stället för dess text.
+
+Zeldas föremålsnamn (Båge, Kedjekrok, Månpärla) översätts i alla språk.
+Super Metroids (Morph Ball, Screw Attack, missiles) står **på engelska
+överallt**: spelet självt översattes aldrig, och spelare känner namnen på
+engelska vilket språk de än talar.
+
+Koden är skriven på engelska, så svenskan är en översättning som alla
+andra.
 
 
 ## Så används det
@@ -240,6 +260,7 @@ uppdateras — inte som ett felmeddelande.
 | Spelet startar men skärmen förblir svart | Nästan alltid MiSTerns egna bildinställningar, inte det här. Ett fast `video_mode` tillsammans med `vsync_adjust=1` ger 50 Hz för PAL-spel, och många TV-apparater vägrar det läget — spelet kör, du ser det bara inte. Kolla sparmappen: dök `saves/<core>/<spel>.eep` eller `.sra` upp har ROM:en laddats. Rätta med `vsync_adjust=0` i `MiSTer.ini`. |
 | Kartan visas men prickarna är färglösa | Tillägget svarar inte. Kolla dess logg och `mister_ip`. |
 | Kartan uppdateras inte efter spelande | Du har inte öppnat OSD:n. Sparfilen är inte utskriven än. |
+| Delar av sidan är på engelska | Språkfilen översätter inte de texterna än — de faller tillbaka på engelska. Kör `lang_check.py`. |
 | "Fel ROM" trots rätt spel | Du har en annan dump. Kontrollera md5 mot listan ovan. |
 | Inget händer efter omstart av MiSTern | `user-startup.sh` får inte heta `_user-startup.sh`. |
 | Nedladdningen misslyckas på MiSTern | Gammal certifikatlista. Kör **Scripts → update_all** en gång, eller lägg `randomizer-payload.tar.gz` bredvid skriptet. |
@@ -273,7 +294,7 @@ nätverksmontering fungerar den — men uppsättningen av den får du göra
 själv.
 
 Har du redan en egen `page.py` lämnar installationen den orörd och lägger
-sin egen bredvid som `page.py.ny`.
+sin egen bredvid som `page.py.new`.
 
 **Inga föremålsikoner.** Varje seedkort har ett rutnät över det du plockat
 upp, uppställt som i communityns trackers. Ikonerna i det är spelens egen
@@ -309,21 +330,28 @@ Det står på andras arbete:
 ## För den som bygger vidare
 
 ```
-├── repository.yaml          maste ligga i roten - HA letar efter den dar
-├── smz3-logic/              sjalva tillagget
-│   ├── config.yaml          installningar, portar, arkitekturer
-│   ├── Dockerfile           hamtar och trimmar Archipelago
-│   └── logik/               reachd.py, smz3_logic.py, alttp_locmap.py
+├── repository.yaml          måste ligga i roten - HA letar efter den där
+├── smz3-logic/              själva tillägget
+│   ├── config.yaml          inställningar, portar, arkitekturer
+│   ├── Dockerfile           hämtar och trimmar Archipelago
+│   └── logic/               reachd.py, smz3_logic.py, alttp_locmap.py
 ├── mister/
 │   ├── Randomizer_install.sh
 │   └── randomizer-payload.tar.gz
-├── build_payload.sh            bygger om payloaden ur en korande MiSTer
-└── check_payload.sh        vakten: inga rom, inga hemligheter
+├── build_payload.sh         bygger om payloaden ur en körande MiSTer
+└── check_payload.sh         vakten: inga ROM, inga hemligheter, inga LAN-uppgifter
 ```
 
-`build_payload.sh` hämtar hem koden från MiSTern och utelämnar det som är
-personligt: ROM, lösenord, egna anteckningar. Innan något packas kör den
-`check_payload.sh` på den uppackade katalogen — hittar vakten en
+MiSTern är källan för payloaden: koden bor där, och `build_payload.sh`
+hämtar hem den och utelämnar det som är personligt: ROM, lösenord, egna
+anteckningar. Utan adress vägrar skriptet köra:
+
+```
+./build_payload.sh 192.168.1.50
+echo 192.168.1.50 > .mister-ip     # ignoreras av git, sparas till nästa gång
+```
+
+Innan något packas kör den `check_payload.sh` på den uppackade katalogen — hittar vakten en
 ROM-ändelse, en fil över 400 K, en binärfil av okänd typ, en hemlighet
 eller ett användartillstånd som inte är tomt, avbryts bygget och den gamla
 tarballen lämnas orörd.

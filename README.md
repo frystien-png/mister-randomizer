@@ -1,6 +1,6 @@
 # Randomizer and game browser for MiSTer FPGA
 
-*[Svenska](README.sv.md) · English*
+*English · [Español](README.es.md) · [Français](README.fr.md) · [Polski](README.pl.md) · [Svenska](README.sv.md)*
 
 Two things that share one small web server running on the MiSTer, both
 built to be used from a phone:
@@ -135,8 +135,9 @@ the script and it is used instead of the download.
 
 The installer finds Home Assistant on its own, lays out the files, asks
 which language you want, creates the menu entries, sets up autostart and
-starts the server. It is safe to re-run at any time — your notes and map
-markers are left alone, and an existing setup is not overwritten.
+starts the server. It is safe to re-run at any time — your notes, map
+markers and finishing times are left alone, and an existing setup is not
+overwritten.
 
 ---
 
@@ -190,11 +191,10 @@ a missing trailing space is enough), and a key that is also used as a CSS
 class or a file name, which would translate the page's plumbing instead of
 its text.
 
-Item names (Bow, Hookshot, Morph Ball) stay in **English in every
-language** unless a translation deliberately changes them. Randomizer
-communities use the English names regardless of what language they speak,
-and a player searching for "Hookshot" should find it. The Swedish file is
-the one exception - it translates them.
+Zelda's item names (Bow, Hookshot, Moon Pearl) are translated in every
+language. Super Metroid's (Morph Ball, Screw Attack, missiles) stay in
+**English everywhere**: the game itself was never translated, and players
+know those names in English whatever language they speak.
 
 Translations may contain apostrophes and quotes — `l'écran`, `¿Qué?` —
 they are escaped for the position they land in.
@@ -282,7 +282,7 @@ does not update — not as an error message.
 | A game starts but the screen stays black | Almost always the MiSTer's own video settings, not this. A fixed `video_mode` together with `vsync_adjust=1` outputs 50 Hz for PAL games, and many TVs refuse that mode - the game is running, you just cannot see it. Check the save folder: if `saves/<core>/<game>.eep` or `.sra` appeared, the ROM did load. Fix with `vsync_adjust=0` in `MiSTer.ini`. |
 | The map shows but the dots have no colour | The add-on is not answering. Check its log and `mister_ip`. |
 | The map does not update after playing | You have not opened the OSD. The save file has not been flushed. |
-| Parts of the page are in Swedish | That language file does not translate those strings yet. Run `lang_check.py`. |
+| Parts of the page are in English | That language file does not translate those strings yet - they fall back to English. Run `lang_check.py`. |
 | "Wrong ROM" for the right game | You have a different dump. Check the md5 against the list above. |
 | Nothing happens after rebooting the MiSTer | `user-startup.sh` must not be named `_user-startup.sh`. |
 | The download fails on the MiSTer | Old certificate list. Run **Scripts → update_all** once, or put `randomizer-payload.tar.gz` next to the script. |
@@ -319,7 +319,7 @@ The browser lists whatever is mounted under `/media/fat/games/`, so your
 own network mount works — but setting it up is on you.
 
 If you already have your own `page.py`, the installer leaves it alone and
-puts its own next to it as `page.py.ny`.
+puts its own next to it as `page.py.new`.
 
 **No item icons.** Each seed card has a grid of what you have picked up,
 laid out like the community trackers. The icons in it are the games' own
@@ -328,8 +328,6 @@ instead, and the grid works the same. To get pictures, put 32×32 PNGs in an
 `items/` folder next to the seed page (in Home Assistant, `/config/www/items/`).
 The file names are the ones `invZelda`/`invMetroid` in `seedpage.py` ask for —
 `bow1.png`, `sword3.png`, `sm-Morph.png` and so on.
-
----
 
 ---
 
