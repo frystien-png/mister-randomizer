@@ -46,6 +46,17 @@ fåtal spel samlas bakom en enda ruta så att startsidan går att överblicka.
 </p>
 
 <p align="center">
+  <img src="docs/leaderboard-smz3.png" alt="SMZ3-topplistan: fem klarade seeds sorterade på totaltid, med Zelda- och Metroid-tiden för varje" width="900">
+  <img src="docs/leaderboard-alttpr.png" alt="ALTTPR-topplistan med en klarad seed" width="900">
+</p>
+
+<p align="center">
+  <em>En topplista per spel, snabbaste klarade seed först. SMZ3 visar varje
+  halvas tid bredvid totalen — samma tider som eftertexterna. "≈" betyder att
+  tiden lästs ur sparfilen i efterhand, inte vid målgång.</em>
+</p>
+
+<p align="center">
   <img src="docs/game-browser.png" alt="Spelbläddraren med alla system på kortet" width="900">
 </p>
 

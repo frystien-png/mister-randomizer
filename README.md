@@ -49,6 +49,18 @@ stays readable.
 </p>
 
 <p align="center">
+  <img src="docs/leaderboard-smz3.png" alt="The SMZ3 leaderboard: five completed seeds ranked by total time, with the Zelda and Metroid times for each" width="900">
+  <img src="docs/leaderboard-alttpr.png" alt="The ALTTPR leaderboard with one completed seed" width="900">
+</p>
+
+<p align="center">
+  <em>A leaderboard for each game, fastest completed seed first. SMZ3 shows
+  each half's time next to the total - the same times the credits print.
+  "≈" marks a time read from the save file afterwards rather than at the
+  finish.</em>
+</p>
+
+<p align="center">
   <img src="docs/game-browser.png" alt="The game browser listing every system on the card" width="900">
 </p>
 
