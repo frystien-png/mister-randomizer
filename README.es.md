@@ -62,10 +62,10 @@ que la página de inicio siga siendo legible.
   del archivo de guardado, no en la meta.</em>
 </p>
 
-**Modo go.** Cada seed de SMZ3 sin terminar indica si puede completarse con
-lo que llevas ahora mismo: cristales y fichas de jefe a tu alcance, la Torre
+**Modo go.** Cada seed sin terminar indica si puede completarse con
+lo que llevas ahora mismo: cristales (y en SMZ3 fichas de jefe) a tu alcance, la Torre
 de Ganon escalable, y una espada o flechas de plata que de verdad dañen a
-Ganon. Cuando se cumplen las cuatro, la tarjeta muestra **GO**. Nunca dice
+Ganon. Cuando se cumplen todas, la tarjeta muestra **GO**. Nunca dice
 dónde está nada, solo que ya tienes suficiente.
 
 <p align="center">

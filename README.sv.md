@@ -56,10 +56,10 @@ fåtal spel samlas bakom en enda ruta så att startsidan går att överblicka.
   tiden lästs ur sparfilen i efterhand, inte vid målgång.</em>
 </p>
 
-**Go-läge.** Varje oklarad SMZ3-seed visar om den går att klara med det du
-har just nu: kristaller och bossmarkörer inom räckhåll, Ganons torn går att
+**Go-läge.** Varje oklarad seed visar om den går att klara med det du
+har just nu: kristaller (och i SMZ3 bossmarkörer) inom räckhåll, Ganons torn går att
 bestiga, och ett svärd eller silverpilar som faktiskt skadar Ganon. När alla
-fyra är på plats visar kortet **GO**. Det säger aldrig var något ligger, bara
+delar är på plats visar kortet **GO**. Det säger aldrig var något ligger, bara
 att du har nog.
 
 <p align="center">

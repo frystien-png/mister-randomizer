@@ -60,10 +60,10 @@ stays readable.
   finish.</em>
 </p>
 
-**Go mode.** Each unfinished SMZ3 seed says whether it can be completed with
-what you are holding right now: crystals and boss tokens within reach,
+**Go mode.** Each unfinished seed says whether it can be completed with
+what you are holding right now: crystals (and in SMZ3 boss tokens) within reach,
 Ganon's Tower climbable, and a sword or silver arrows that can actually hurt
-Ganon. When all four are in place the card shows **GO**. It never says where
+Ganon. When every part is in place the card shows **GO**. It never says where
 anything is, only that you have enough.
 
 <p align="center">

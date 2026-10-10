@@ -351,6 +351,45 @@ def reachable(items, extra=(), medals=("Ether", "Quake")):
     }
 
 
+def go_mode(items, extra=(), pending=None, medals=("Ether", "Quake"),
+            need=7):
+    """Can the seed be finished with what the player holds right now?
+
+        `pending` maps a boss location to the crystal its dungeon gives, for
+        the dungeons not cleared yet. A crystal counts when it is collected
+        (it is then in `extra`) OR when its boss can be reached - the question
+        is whether anything more has to be FOUND, not what is open today.
+
+        Reaching one boss can depend on the crystal from another, and on
+        Agahnim, so the loop runs until nothing more falls.
+
+        ⚠️ Big keys are all handed out here, unlike in /reach: each lies
+        inside its own dungeon, so a missing one is never something left to
+        find out in the world.
+
+        The tower is asked about with every crystal in hand, so that it shows
+        on its own whether Ganon's Tower can be climbed. Ganon himself is not
+        judged here - the caller has its own rule for that.
+    """
+    names = set(to_ap_items(items)) | {x for x in extra if x} | set(BIG_KEYS)
+    kvar = {k: v for k, v in (pending or {}).items() if v in PRIZES}
+    if "Beat Agahnim 1" not in names:
+        kvar["Agahnim 1"] = "Beat Agahnim 1"
+    by = get_world(medals)["by"]
+    while kvar:
+        state = _state_for(names, medals)
+        nya = [k for k in kvar if k in by and by[k].can_reach(state)]
+        if not nya:
+            break
+        for k in nya:
+            names.add(kvar.pop(k))
+    krist = sum(1 for n in names if n.startswith("Crystal "))
+    alla = names | {"Crystal %d" % i for i in range(1, 8)}
+    torn = bool(by["Agahnim 2"].can_reach(_state_for(alla, medals)))
+    return {"go": krist >= need and torn, "crystals": [krist, need],
+            "tower": torn}
+
+
 def missing_for(items, name, extra=(), medals=("Ether", "Quake")):
     """What is missing to reach a location? Returns AP item names.
 
@@ -482,6 +521,18 @@ class Handler(BaseHTTPRequestHandler):
                                   klara=body.get("klara"))
 
     def do_POST(self):
+        if self.path == "/go":
+            try:
+                n = int(self.headers.get("Content-Length") or 0)
+                body = json.loads(self.rfile.read(n) or b"{}")
+                extra = [x for x in (body.get("extra") or [])
+                         if x in PRIZES or x in BIG_KEYS]
+                return self._send(200, go_mode(
+                    body.get("items") or {}, extra,
+                    body.get("pending") or {}, self._medals(body),
+                    int(body.get("need") or 7)))
+            except Exception as e:                             # noqa: BLE001
+                return self._send(400, {"error": str(e)})
         if self.path == "/smz3go":
             try:
                 n = int(self.headers.get("Content-Length") or 0)
