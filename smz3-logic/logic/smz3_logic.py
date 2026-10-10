@@ -288,16 +288,33 @@ def reach(names, rewards=None, medallions=("Ether", "Quake"), keys=True,
             "ms": int((time.time() - t0) * 1000)}
 
 
+def _ganon_slagbar(typer):
+    """Can Ganon himself be beaten with these items?
+
+        ⚠️ Our own rule, not the randomizer's - its completion rule stops at
+        the top of the tower. The Master Sword and a way to light the torches
+        get him to the last phase, but there only silver arrows hurt him, or
+        a sword of the third level or better. Learned the hard way 2026-10-10:
+        a seed reached Ganon with the Master Sword and no silver arrows.
+    """
+    namn = [t.name for t in typer]
+    svard = namn.count("ProgressiveSword")
+    return (svard >= 2 and ("Firerod" in namn or "Lamp" in namn)
+            and (svard >= 3 or ("SilverArrows" in namn and "Bow" in namn)))
+
+
 def go_mode(names, rewards=None, medallions=("Ether", "Quake"), klara=None):
     """Can the game be finished with what the player holds right now?
 
         The answer is the randomizer's OWN completion rule - the one
         Archipelago uses to decide that a seed can be beaten - taken apart
-        into its three parts so the page can show what is still missing:
+        into its parts so the page can show what is still missing, plus a rule
+        of our own for the Ganon fight:
 
           crystals  enough of them within reach to make Ganon vulnerable
           bosses    enough boss tokens within reach to open Tourian
           tower     Ganon's Tower can be reached and climbed
+          ganon     Ganon can be hurt, see _ganon_slagbar
 
         ⚠️ A reward counts when it is collected OR collectable. That is the
         opposite of reach(), where it must be collected - there the question
@@ -305,9 +322,12 @@ def go_mode(names, rewards=None, medallions=("Ether", "Quake"), klara=None):
         `klara` is still needed: a dungeon cleared out of logic has its reward
         whatever the rule says.
 
-        ⚠️ The rule stops at the top of the tower. It does not ask whether
-        Ganon or Mother Brain can actually be beaten with the sword, ammo and
-        energy at hand - the randomizer does not either.
+        ⚠️ Mother Brain is not judged: the randomizer has no rule for whether
+        the ammo and energy at hand are enough.
+
+        "missing" is a smallest set of items that would light the lamp, in the
+        same shape missing() answers with - one valid set, with what could
+        stand in for each item listed next to it.
     """
     entry = get_world(rewards, medallions)
     w = entry["w"]
@@ -319,26 +339,89 @@ def go_mode(names, rewards=None, medallions=("Ether", "Quake"), klara=None):
     if "stora" not in entry:
         entry["stora"] = [i for i in Item.CreateDungeonPool(w)
                           if i.Type.name.startswith("BigKey")]
-    items = to_items(names, entry["handout"] + entry["stora"])
+    utdelat = entry["handout"] + entry["stora"]
     klar = set(klara or ())
-
-    def antal(mask):
-        return sum(1 for r in w.rewardLookup[mask.value]
-                   if r.Name in klar or r.CanComplete(items))
-
     gt = w.GetRegion("Ganon's Tower")
-    krist, behov_k = antal(RewardType.AnyCrystal), w.GanonCrystals
-    boss, behov_b = antal(RewardType.AnyBossToken), w.TourianBossTokens
-    # The way to the tower's door, without the crystal count CanEnter adds -
-    # that part is shown on its own.
-    torn = bool(items.MoonPearl
-                and w.CanEnter("Dark World Death Mountain East", items)
-                and gt.TowerAscend(items))
-    return {"go": krist >= max(behov_k, w.TowerCrystals)
-            and boss >= behov_b and torn,
-            "crystals": [krist, max(behov_k, w.TowerCrystals)],
-            "bosses": [boss, behov_b],
-            "tower": torn}
+    behov_k = max(w.GanonCrystals, w.TowerCrystals)
+    behov_b = w.TourianBossTokens
+    har = [getattr(ItemType, n) for n in (names or [])
+           if getattr(ItemType, n, None) is not None]
+
+    def lage(typer):
+        items = Progression([Item(t) for t in typer] + utdelat)
+
+        def antal(mask):
+            return sum(1 for r in w.rewardLookup[mask.value]
+                       if r.Name in klar or r.CanComplete(items))
+
+        # The way to the tower's door, without the crystal count CanEnter
+        # adds - that part is shown on its own.
+        torn = bool(items.MoonPearl
+                    and w.CanEnter("Dark World Death Mountain East", items)
+                    and gt.TowerAscend(items))
+        krist, boss = antal(RewardType.AnyCrystal), antal(RewardType.AnyBossToken)
+        ganon = _ganon_slagbar(typer)
+        return {"go": krist >= behov_k and boss >= behov_b and torn and ganon,
+                "crystals": [krist, behov_k], "bosses": [boss, behov_b],
+                "tower": torn, "ganon": ganon}
+
+    svar = lage(har)
+    if svar["go"]:
+        return svar
+
+    # The universe: the progression pool, plus the two swords and the silver
+    # arrows from the "nice" pool - the Ganon rule can need them.
+    kvar = [it.Type for it in Item.CreateProgressionPool(w)] + [
+        ItemType.ProgressiveSword, ItemType.ProgressiveSword,
+        ItemType.SilverArrows]
+    for t in har:                       # never touch what is already held
+        if t in kvar:
+            kvar.remove(t)
+
+    def gar(extra):
+        return lage(list(har) + list(extra))["go"]
+
+    if not gar(kvar):
+        return svar                     # nothing in the pool helps - say no more
+
+    def minimera(ordning):
+        cur = list(kvar)
+        for t in ordning:
+            if t not in cur:
+                continue
+            prov = list(cur)
+            prov.remove(t)
+            if gar(prov):
+                cur = prov
+        return cur
+
+    # Order-sensitive, as in missing(): try a few and keep the smallest.
+    rnd = random.Random(0)
+    ordningar = [list(kvar), list(reversed(kvar))]
+    for _ in range(2):
+        o = list(kvar)
+        rnd.shuffle(o)
+        ordningar.append(o)
+    bast = min((minimera(o) for o in ordningar), key=len)
+
+    antal = {}
+    for t in bast:
+        antal[t] = antal.get(t, 0) + 1
+    kandidater = [u for u in set(kvar) if u not in antal]
+    combo, alt = [], {}
+    for t, k in sorted(antal.items(),
+                       key=lambda p: TYPE_NAMES.get(p[0].name, p[0].name)):
+        n = TYPE_NAMES.get(t.name, t.name)
+        etikett = n if k == 1 else "%s ×%d" % (n, k)
+        combo.append(etikett)
+        rest = list(bast)
+        rest.remove(t)                  # ONE occurrence - progressives count
+        byten = sorted({TYPE_NAMES.get(u.name, u.name)
+                        for u in kandidater if gar(rest + [u])})
+        if byten:
+            alt[etikett] = byten
+    svar["missing"] = {"combo": combo, "alternativ": alt}
+    return svar
 
 
 # The Metroid half's item types. Used to steer the minimisation towards

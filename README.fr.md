@@ -67,7 +67,8 @@ une seule tuile pour que la page d'accueil reste lisible.
 **Mode go.** Chaque seed non terminée indique si elle peut être finie
 avec ce que vous avez en ce moment : cristaux (et dans SMZ3 jetons de boss) à portée, la
 Tour de Ganon gravissable, et une épée ou des flèches d’argent capables de
-blesser Ganon. Quand tout est réuni, la carte affiche **GO**. Elle ne
+blesser Ganon. Quand tout est réuni, la carte affiche **GO**. Tant que le voyant est éteint, la carte liste aussi un ensemble
+minimal d’objets qui l’allumerait. Elle ne
 dit jamais où se trouve quoi que ce soit, seulement que vous avez assez.
 
 <p align="center">

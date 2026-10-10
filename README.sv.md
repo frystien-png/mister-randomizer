@@ -59,7 +59,8 @@ fåtal spel samlas bakom en enda ruta så att startsidan går att överblicka.
 **Go-läge.** Varje oklarad seed visar om den går att klara med det du
 har just nu: kristaller (och i SMZ3 bossmarkörer) inom räckhåll, Ganons torn går att
 bestiga, och ett svärd eller silverpilar som faktiskt skadar Ganon. När alla
-delar är på plats visar kortet **GO**. Det säger aldrig var något ligger, bara
+delar är på plats visar kortet **GO**. Så länge lampan är släckt listar kortet också en
+minsta uppsättning föremål som skulle tända den. Det säger aldrig var något ligger, bara
 att du har nog.
 
 <p align="center">

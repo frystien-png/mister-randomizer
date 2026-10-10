@@ -65,7 +65,8 @@ que la página de inicio siga siendo legible.
 **Modo go.** Cada seed sin terminar indica si puede completarse con
 lo que llevas ahora mismo: cristales (y en SMZ3 fichas de jefe) a tu alcance, la Torre
 de Ganon escalable, y una espada o flechas de plata que de verdad dañen a
-Ganon. Cuando se cumplen todas, la tarjeta muestra **GO**. Nunca dice
+Ganon. Cuando se cumplen todas, la tarjeta muestra **GO**. Mientras la luz está apagada, la tarjeta también lista un conjunto
+mínimo de objetos que la encendería. Nunca dice
 dónde está nada, solo que ya tienes suficiente.
 
 <p align="center">

@@ -351,8 +351,30 @@ def reachable(items, extra=(), medals=("Ether", "Quake")):
     }
 
 
+def _ganon_slagbar(names):
+    """Can Ganon himself be beaten with these items?
+
+        ⚠️ Our own rule. Archipelago's no-glitches rule always demands the
+        silver arrows, which is stricter than the game: the Master Sword and a
+        way to light the torches get him to the last phase, and there silver
+        arrows hurt him - or a sword of the third level or better. The same
+        rule as the SMZ3 half, learned 2026-10-10.
+    """
+    battre = "Tempered Sword" in names or "Golden Sword" in names
+    return ((battre or "Master Sword" in names)
+            and ("Fire Rod" in names or "Lamp" in names)
+            and (battre or "Silver Bow" in names))
+
+
+# What the minimisation may add: every item the logic knows, the glove and
+# sword levels, and the silver arrows. Not the prizes - those are earned.
+GO_UNIVERSE = sorted(set(ITEM_MAP.values()) | {
+    "Power Glove", "Titans Mitts", "Master Sword", "Tempered Sword",
+    "Silver Bow"})
+
+
 def go_mode(items, extra=(), pending=None, medals=("Ether", "Quake"),
-            need=7):
+            need=7, silver=False):
     """Can the seed be finished with what the player holds right now?
 
         `pending` maps a boss location to the crystal its dungeon gives, for
@@ -368,26 +390,74 @@ def go_mode(items, extra=(), pending=None, medals=("Ether", "Quake"),
         find out in the world.
 
         The tower is asked about with every crystal in hand, so that it shows
-        on its own whether Ganon's Tower can be climbed. Ganon himself is not
-        judged here - the caller has its own rule for that.
+        on its own whether Ganon's Tower can be climbed.
+
+        "missing" is a smallest set of items that would light the lamp - one
+        valid set, with what could stand in for each item next to it.
     """
-    names = set(to_ap_items(items)) | {x for x in extra if x} | set(BIG_KEYS)
-    kvar = {k: v for k, v in (pending or {}).items() if v in PRIZES}
-    if "Beat Agahnim 1" not in names:
-        kvar["Agahnim 1"] = "Beat Agahnim 1"
-    by = get_world(medals)["by"]
-    while kvar:
+    har = set(to_ap_items(items)) | {x for x in extra if x} | set(BIG_KEYS)
+    if silver:
+        har.add("Silver Bow")
+    w = get_world(medals)
+    by = w["by"]
+    kristaller = ["Crystal %d" % i for i in range(1, 8)]
+
+    def lage(names):
+        names = set(names)
+        kvar = {k: v for k, v in (pending or {}).items() if v in PRIZES}
+        if "Beat Agahnim 1" not in names:
+            kvar["Agahnim 1"] = "Beat Agahnim 1"
         state = _state_for(names, medals)
-        nya = [k for k in kvar if k in by and by[k].can_reach(state)]
-        if not nya:
-            break
-        for k in nya:
-            names.add(kvar.pop(k))
-    krist = sum(1 for n in names if n.startswith("Crystal "))
-    alla = names | {"Crystal %d" % i for i in range(1, 8)}
-    torn = bool(by["Agahnim 2"].can_reach(_state_for(alla, medals)))
-    return {"go": krist >= need and torn, "crystals": [krist, need],
-            "tower": torn}
+
+        def ge(namn):
+            for it in item_factory(sorted(namn), w["b"].world):
+                it.classification = ItemClassification.progression
+                state.collect(it, prevent_sweep=True)
+
+        while kvar:
+            nya = [k for k in kvar if k in by and by[k].can_reach(state)]
+            if not nya:
+                break
+            vunnet = [kvar.pop(k) for k in nya]
+            names.update(vunnet)
+            ge(vunnet)
+        krist = sum(1 for n in names if n.startswith("Crystal "))
+        ge([k for k in kristaller if k not in names])
+        torn = bool(by["Agahnim 2"].can_reach(state))
+        ganon = _ganon_slagbar(names)
+        return {"go": krist >= need and torn and ganon,
+                "crystals": [krist, need], "tower": torn, "ganon": ganon}
+
+    svar = lage(har)
+    if svar["go"]:
+        return svar
+    kand = [n for n in GO_UNIVERSE if n not in har]
+    if not lage(har | set(kand))["go"]:
+        return svar                     # nothing in the pool helps - say no more
+
+    def minimera(ordning):
+        cur = set(kand)
+        for n in ordning:
+            if lage(har | (cur - {n}))["go"]:
+                cur.discard(n)
+        return cur
+
+    # Order-sensitive: a few orders, keep the smallest. The first one drops
+    # the silver arrows before anything else, so that an ordinary bow is not
+    # asked for in the shape of a silver one.
+    forst = [n for n in kand if n == "Silver Bow"]
+    ovriga = [n for n in kand if n != "Silver Bow"]
+    bast = min((minimera(o) for o in (forst + ovriga, kand, kand[::-1])),
+               key=len)
+    alt = {}
+    for n in sorted(bast):
+        rest = har | (bast - {n})
+        byten = [u for u in kand
+                 if u not in bast and lage(rest | {u})["go"]]
+        if byten:
+            alt[n] = byten
+    svar["missing"] = {"combo": sorted(bast), "alternativ": alt}
+    return svar
 
 
 def missing_for(items, name, extra=(), medals=("Ether", "Quake")):
@@ -530,7 +600,8 @@ class Handler(BaseHTTPRequestHandler):
                 return self._send(200, go_mode(
                     body.get("items") or {}, extra,
                     body.get("pending") or {}, self._medals(body),
-                    int(body.get("need") or 7)))
+                    int(body.get("need") or 7),
+                    bool(body.get("silver"))))
             except Exception as e:                             # noqa: BLE001
                 return self._send(400, {"error": str(e)})
         if self.path == "/smz3go":
