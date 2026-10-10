@@ -64,6 +64,12 @@ une seule tuile pour que la page d'accueil reste lisible.
   la sauvegarde plutôt qu'à l'arrivée.</em>
 </p>
 
+**Mode go.** Chaque seed SMZ3 non terminée indique si elle peut être finie
+avec ce que vous avez en ce moment : cristaux et jetons de boss à portée, la
+Tour de Ganon gravissable, et une épée ou des flèches d’argent capables de
+blesser Ganon. Quand les quatre sont réunis, la carte affiche **GO**. Elle ne
+dit jamais où se trouve quoi que ce soit, seulement que vous avez assez.
+
 <p align="center">
   <img src="docs/game-browser.png" alt="Le navigateur de jeux avec tous les systèmes de la carte" width="900">
 </p>

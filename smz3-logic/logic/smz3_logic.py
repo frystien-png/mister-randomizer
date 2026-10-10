@@ -288,6 +288,59 @@ def reach(names, rewards=None, medallions=("Ether", "Quake"), keys=True,
             "ms": int((time.time() - t0) * 1000)}
 
 
+def go_mode(names, rewards=None, medallions=("Ether", "Quake"), klara=None):
+    """Can the game be finished with what the player holds right now?
+
+        The answer is the randomizer's OWN completion rule - the one
+        Archipelago uses to decide that a seed can be beaten - taken apart
+        into its three parts so the page can show what is still missing:
+
+          crystals  enough of them within reach to make Ganon vulnerable
+          bosses    enough boss tokens within reach to open Tourian
+          tower     Ganon's Tower can be reached and climbed
+
+        ⚠️ A reward counts when it is collected OR collectable. That is the
+        opposite of reach(), where it must be collected - there the question
+        is what opens today, here whether anything more has to be FOUND.
+        `klara` is still needed: a dungeon cleared out of logic has its reward
+        whatever the rule says.
+
+        ⚠️ The rule stops at the top of the tower. It does not ask whether
+        Ganon or Mother Brain can actually be beaten with the sword, ammo and
+        energy at hand - the randomizer does not either.
+    """
+    entry = get_world(rewards, medallions)
+    w = entry["w"]
+    # ⚠️ Big keys ARE handed out here, unlike in reach(). Without keysanity
+    # each one lies inside its own dungeon, so a missing big key is never
+    # something left to find out in the world - and that is the question.
+    # The price: a big key chest that itself needs an item the boss does not
+    # is overlooked.
+    if "stora" not in entry:
+        entry["stora"] = [i for i in Item.CreateDungeonPool(w)
+                          if i.Type.name.startswith("BigKey")]
+    items = to_items(names, entry["handout"] + entry["stora"])
+    klar = set(klara or ())
+
+    def antal(mask):
+        return sum(1 for r in w.rewardLookup[mask.value]
+                   if r.Name in klar or r.CanComplete(items))
+
+    gt = w.GetRegion("Ganon's Tower")
+    krist, behov_k = antal(RewardType.AnyCrystal), w.GanonCrystals
+    boss, behov_b = antal(RewardType.AnyBossToken), w.TourianBossTokens
+    # The way to the tower's door, without the crystal count CanEnter adds -
+    # that part is shown on its own.
+    torn = bool(items.MoonPearl
+                and w.CanEnter("Dark World Death Mountain East", items)
+                and gt.TowerAscend(items))
+    return {"go": krist >= max(behov_k, w.TowerCrystals)
+            and boss >= behov_b and torn,
+            "crystals": [krist, max(behov_k, w.TowerCrystals)],
+            "bosses": [boss, behov_b],
+            "tower": torn}
+
+
 # The Metroid half's item types. Used to steer the minimisation towards
 # the world the location actually sits in.
 SM_TYPES = {

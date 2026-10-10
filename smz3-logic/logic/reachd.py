@@ -472,7 +472,23 @@ class Handler(BaseHTTPRequestHandler):
                                   klara=body.get("klara"),
                                   sm_lasta=body.get("sm_lasta"))
 
+    @staticmethod
+    def _smz3go(body):
+        import smz3_logic
+        return smz3_logic.go_mode(body.get("items") or [],
+                                  body.get("rewards") or None,
+                                  tuple(body.get("medals") or
+                                        ("Ether", "Quake")),
+                                  klara=body.get("klara"))
+
     def do_POST(self):
+        if self.path == "/smz3go":
+            try:
+                n = int(self.headers.get("Content-Length") or 0)
+                body = json.loads(self.rfile.read(n) or b"{}")
+                return self._send(200, self._smz3go(body))
+            except Exception as e:                             # noqa: BLE001
+                return self._send(400, {"error": str(e)})
         if self.path == "/smz3missing":
             try:
                 n = int(self.headers.get("Content-Length") or 0)

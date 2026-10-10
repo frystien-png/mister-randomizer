@@ -60,6 +60,12 @@ startowa pozostała czytelna.
   na mecie.</em>
 </p>
 
+**Tryb go.** Każdy nieukończony seed SMZ3 pokazuje, czy da się go ukończyć z
+tym, co masz teraz: kryształy i żetony bossów w zasięgu, Wieża Ganona do
+przejścia oraz miecz albo srebrne strzały, które naprawdę ranią Ganona. Gdy
+wszystkie cztery warunki są spełnione, karta pokazuje **GO**. Nigdy nie mówi,
+gdzie coś leży, tylko że masz już dość.
+
 <p align="center">
   <img src="docs/game-browser.png" alt="Przeglądarka gier z listą wszystkich systemów na karcie" width="900">
 </p>
